@@ -1513,7 +1513,7 @@ GitHub Copilot 可帮助你为图书馆应用程序开发新功能。
 
     配置分支后，将显示 main 和 book-availability 之间的更改比较结果********。 你应该会看到对 CommonActions.cs、ConsoleApp.cs 和 JsonDaa.cs 文件所做的更改。
 
-1. 选择“创建拉取请求”。
+1. 选择**创建拉取请求**。
 
 1. 输入拉取请求的标题。
 
@@ -2880,7 +2880,7 @@ JsonPatronRepository 类包括 SearchPatrons、GetPatron 和 UpdatePatron 方法
 
 1. 在“输入选项”提示处键入 r，然后按 Enter****。
 
-1. 确认是否显示 **“书籍已成功归还。”** 的消息。 显示。
+1. 确认是否显示 **“书籍已成功归还。”** 的消息。 的消息。
 
 1. 若要开始新的搜索，请键入 s，然后按 Enter****。
 
