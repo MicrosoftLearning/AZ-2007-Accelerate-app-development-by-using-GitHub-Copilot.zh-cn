@@ -1,45 +1,45 @@
 ---
 demo:
-  title: 演示：使用 GitHub Copilot 针对特定条件创建单元测试
-  module: 'Module 4: Develop unit tests using GitHub Copilot tools'
+    title: 'Demo: Create unit tests for specific conditions by using GitHub Copilot'
+    module: 'Module 4: Develop unit tests using GitHub Copilot tools'
 ---
 
-# 演示：使用 GitHub Copilot 针对特定条件创建单元测试
+# Demo: Create unit tests for specific conditions by using GitHub Copilot
 
-## 说明
+## Instructions
 
-这些演示活动专为包含以下资源的环境而设计：
+The demo activities are designed for an environment that includes the following resources:
 
-- Visual Studio Code。
-- 适用于 Visual Studio Code 的 C# 开发工具包扩展。
-- 适用于 Visual Studio Code 的 GitHub Copilot 和 GitHub Copilot Chat 扩展。 需要具有 GitHub Copilot 活动订阅的 GitHub 帐户。
-- 使用 C# 创建的示例代码项目。
+- Visual Studio Code.
+- The C# Dev Kit extension for Visual Studio Code.
+- The GitHub Copilot and GitHub Copilot Chat extensions for Visual Studio Code. A GitHub account with an active subscription for GitHub Copilot is required.
+- Sample code projects created using C#.
 
-注意****：我们建议讲师在演示过程中使用自己的 GitHub 帐户和 GitHub Copilot 订阅。 这样可以更好地控制和自定义开发环境。 此外，还可以更轻松地根据课堂需求调整演示内容。
+**NOTE**: We recommend that instructors consider using their own GitHub account and GitHub Copilot subscription for the demos. This will enable you to control and customize your dev environment. It will also make it easier to adjust the demos to fit the needs of your classrooms.
 
-**重要说明**：如果选择在托管实验室环境中运行演示，而不是在讲师电脑上进行演示，则可以在托管环境中解压缩示例应用。 在运行演示之前，需要在托管环境中配置 GitHub Copilot 扩展。 你可能会发现托管环境的运行速度较本地环境慢一些，因此在演示过程中可能需要相应地调整节奏。
+**IMPORTANT**: If you choose to run the demos in the hosted lab environment rather than your instructor PC, you can unzip the sample apps in the hosted environment. You will need to configure the GitHub Copilot extensions in the hosted environment before you can run the demos. You may find that the hosted environment is slower than your local environment, so you may need to adjust the pace of the demos accordingly.
 
-### 演示简介
+### Introduce the demo
 
-GitHub Copilot 扩展可帮助你为代码中的特定条件创建单元测试。 例如，可以使用 GitHub Copilot Chat 测试某个方法在收到特定输入时的行为。
+The GitHub Copilot extensions can help you to create unit tests for specific conditions in your code. For example, you can use GitHub Copilot Chat to test the behavior of a method when it receives specific input.
 
-在本演示中，你将使用 GitHub Copilot 扩展为特定条件创建单元测试。
+In this demonstration, you use the GitHub Copilot extensions to create unit tests for specific conditions.
 
-### 使用 GitHub Copilot 创建单元测试
+### Create unit tests using GitHub Copilot
 
-你可以使用 GitHub Copilot 自动补全建议创建单元测试。 使用自动补全建议可帮助你快速生成代码的单元测试。
+You can create unit tests using GitHub Copilot autocompletion suggestions. Using autocompletion suggestions can help you to quickly generate unit tests for your code.
 
-在演示的这一部分，你将使用 GitHub Copilot 为 `PrimeService` 类的 `IsPrime` 方法创建单元测试。
+In this section of the demo, you use GitHub Copilot to create unit tests for the `IsPrime` method of the `PrimeService` class.
 
-请使用以下步骤完成本演示的这一部分：
+Use the following steps to complete this section of the demo:
 
-1. 在 Visual Studio Code 中打开 APL2007M4PrimeService-UnitTests 项目文件夹****。
+1. Open the **APL2007M4PrimeService-UnitTests** project folder in Visual Studio Code.
 
-1. 在编辑器中打开 PrimeServiceTests.cs 文件。
+1. Open the PrimeServiceTests.cs file in the editor.
 
-1. 删除 `PrimeServiceTests` 类中的所有代码。
+1. Delete all of the code inside the `PrimeServiceTests` class.
 
-    PrimeServiceTests.cs 文件的内容应类似于以下代码片段：
+    The contents of the PrimeServiceTests.cs file should resemble the following code snippet:
 
     ```csharp
 
@@ -50,17 +50,17 @@ GitHub Copilot 扩展可帮助你为代码中的特定条件创建单元测试�
 
     ```
 
-1. 保存 PrimeServiceTests.cs 文件，然后重新生成解决方案。
+1. Save the PrimeServiceTests.cs file, and then rebuild the solution.
 
-1. 若要让 GitHub Copilot 生成内联补全，请在 `PrimeServiceTests` 类中创建一个空白行。
+1. To have GitHub Copilot generate an inline completion, create a blank line inside the `PrimeServiceTests` class.
 
-    如果等待一两秒，GitHub Copilot 会建议 `PrimeServiceTests` 类的补全内容。
+    If you wait a second or two, GitHub Copilot suggests a completion for the `PrimeServiceTests` class.
 
-1. 选择“接受”，然后花点时间查看 GitHub Copilot 生成的单元测试。****
+1. Select **Accept**, and the take a minute to review the unit tests generated by GitHub Copilot.
 
-1. 花点时间查看 GitHub Copilot 为 `IsPrime` 方法生成的单元测试集合。
+1. Take a minute to review the collection of unit tests that GitHub Copilot generated for the `IsPrime` method.
 
-    本演示的下一部分将介绍如何使用 GitHub Copilot 对话助手来要求 GitHub Copilot 建议应测试的其他边缘案例。
+    The next section of the demo shows how to use GitHub Copilot Chat to ask GitHub Copilot to suggest additional edge cases that should be tested.
 
     ```csharp
 
@@ -118,21 +118,21 @@ GitHub Copilot 扩展可帮助你为代码中的特定条件创建单元测试�
 
     ```
 
-### 使用 GitHub Copilot 和 GitHub Copilot Chat 为特定条件创建单元测试
+### Create unit tests for specific conditions using GitHub Copilot and GitHub Copilot Chat
 
-1. 选择 `PrimeServiceTests` 类的内容。
+1. Select the contents of the `PrimeServiceTests` class.
 
-1. 打开“聊天”视图。
+1. Open the Chat view.
 
-1. 若要将 PrimeService.cs 文件添加到“聊天”视图上下文，请将 PrimeService.cs 文件从资源管理器视图拖放到“聊天”视图中。
+1. To add the PrimeService.cs file to the Chat view context, drag-and-drop the PrimeService.cs file from the Explorer view into the Chat view.
 
-1. 在“聊天”视图中输入以下提示：
+1. Enter the following prompt in the Chat view:
 
     ```plaintext
     @workspace #selection are there any edge cases that should also be tested 
     ```
 
-1. 花点时间查看 GitHub Copilot 提供的建议。
+1. Take a minute to review the suggestions provided by GitHub Copilot.
 
     ```plaintext
     Yes, there are a few edge cases that should also be tested:
@@ -203,30 +203,30 @@ GitHub Copilot 扩展可帮助你为代码中的特定条件创建单元测试�
 
     ```
 
-1. 在 `PrimeServiceTests` 类的最后一个测试方法之后创建一个空行。
+1. Create a blank line after the last test method in the `PrimeServiceTests` class.
 
-1. 在聊天视图中，将鼠标悬停在代码片段上，然后选择“在光标处插入”****。
+1. In the Chat view, hover the mouse over the code snippet, and then select **Insert at Cursor**.
 
-1. 保存 PrimeServiceTests.cs 文件，然后重新生成解决方案。
+1. Save the PrimeServiceTests.cs file, and then rebuild the solution.
 
-1. 花点时间查看 GitHub Copilot 为 `IsPrime` 方法生成的单元测试集合。
+1. Take a minute to review the collection of unit tests that GitHub Copilot generated for the `IsPrime` method.
 
-    与往常一样，请务必查看 GitHub Copilot 补全的工作，以确保测试有效并且涵盖你想要测试的边缘情况。 对测试感到满意后，可以运行测试来验证其是否通过。
+    As always, it's important to review the work completed by GitHub Copilot to ensure that the tests are valid and that they cover the edge cases that you want to test. Once you're satisfied with the tests, you can run them to verify that they pass.
 
-1. 将鼠标指针悬停在绿色“测试箭头”之一上。
+1. Hover the mouse pointer over one of the green "test arrows".
 
-    请注意工具提示消息，告知你可以单击以运行测试，或右键单击以查看更多选项。
+    Notice the tooltip message telling you that you can either click to run the test, or right-click to see more options.
 
-1. 右键单击其中一个绿色的“测试箭头”。
+1. Right-click one of the green "test arrows".
 
-1. 选择“在测试资源管理器中显示”****。
+1. Select **Reveal in Test Explorer**.
 
-    请注意，“测试资源管理器”视图随即打开。 测试资源管理器视图可用于运行和调试测试，以及查看测试运行的结果。 若要手动打开“测试资源管理器”视图，请从 Visual Studio Code 窗口左侧的活动栏中选择“测试”****。 “测试”视图的图标看起来像一个实验室烧瓶****。
+    Notice that the Test Explorer view opens. The Test Explorer view can be used to run and debug tests, and to view the results of test runs. To open the Test Explorer view manually, select **Testing** from the Activity Bar on the left side of the Visual Studio Code window. The icon for the **Testing** view is the one that looks like a lab flask.
 
-1. 在“测试资源管理器”视图顶部，选择“运行测试”****。
+1. At the top of the Test Explorer view, select **Run Tests**.
 
-    几秒钟后，测试资源管理器会显示测试运行的结果。 你应看到所有测试全都通过了。 测试资源管理器和编辑器中单元测试左侧的绿色复选标记指示测试已通过。
+    After a few seconds, the Test Explorer shows the results of the test run. You should see that all of the tests pass. Green checkmarks in the Test Explorer and to the left of the unit tests in the Editor indicate that the test passed.
 
-### 总结
+### Summary
 
-在本演示中，你使用 GitHub Copilot 和 GitHub Copilot 对话助手针对 `PrimeService` 类中的特定条件创建了单元测试。 你使用了代码行补全来生成断言，以确保函数输入参数有效，并且你使用了聊天视图来要求 GitHub Copilot 建议应测试的其他边缘情况。 你查看了 GitHub Copilot 提供的建议并运行了测试以验证其是否通过。 你还了解了如何使用 Visual Studio Code 中的测试资源管理器来运行和查看测试运行的结果。
+In this demo, you used GitHub Copilot and GitHub Copilot Chat to create unit tests for specific conditions in the `PrimeService` class. You used code line completions to generate assertions to ensure that function input parameters are valid, and you used the Chat view to ask GitHub Copilot to suggest additional edge cases that should be tested. You reviewed the suggestions provided by GitHub Copilot and ran the tests to verify that they pass. You also learned how to use the Test Explorer in Visual Studio Code to run and view the results of test runs.
