@@ -1,174 +1,174 @@
 ---
 demo:
-  title: 演示：使用 GitHub Copilot 对话助手提高代码安全性
-  module: 'Module 5: Implement code improvements using GitHub Copilot tools'
+    title: 'Demo: Improve code security by using GitHub Copilot Chat'
+    module: 'Module 5: Implement code improvements using GitHub Copilot tools'
 ---
 
-# 演示：使用 GitHub Copilot 对话助手提高代码安全性
+# Demo: Improve code security by using GitHub Copilot Chat
 
-## 说明
+## Instructions
 
-这些演示活动专为包含以下资源的环境而设计：
+The demo activities are designed for an environment that includes the following resources:
 
-- Visual Studio Code。
-- 适用于 Visual Studio Code 的 C# 开发工具包扩展。
-- 适用于 Visual Studio Code 的 GitHub Copilot 和 GitHub Copilot Chat 扩展。 需要具有 GitHub Copilot 活动订阅的 GitHub 帐户。
-- 使用 C# 创建的示例代码项目。
+- Visual Studio Code.
+- The C# Dev Kit extension for Visual Studio Code.
+- The GitHub Copilot and GitHub Copilot Chat extensions for Visual Studio Code. A GitHub account with an active subscription for GitHub Copilot is required.
+- Sample code projects created using C#.
 
-注意****：我们建议讲师在演示过程中使用自己的 GitHub 帐户和 GitHub Copilot 订阅。 这样可以更好地控制和自定义开发环境。 此外，还可以更轻松地根据课堂需求调整演示内容。
+**NOTE**: We recommend that instructors consider using their own GitHub account and GitHub Copilot subscription for the demos. This will enable you to control and customize your dev environment. It will also make it easier to adjust the demos to fit the needs of your classrooms.
 
-**重要说明**：如果选择在托管实验室环境中运行演示，而不是在讲师电脑上进行演示，则可以在托管环境中解压缩示例应用。 在运行演示之前，需要在托管环境中配置 GitHub Copilot 扩展。 你可能会发现托管环境的运行速度较本地环境慢一些，因此在演示过程中可能需要相应地调整节奏。
+**IMPORTANT**: If you choose to run the demos in the hosted lab environment rather than your instructor PC, you can unzip the sample apps in the hosted environment. You will need to configure the GitHub Copilot extensions in the hosted environment before you can run the demos. You may find that the hosted environment is slower than your local environment, so you may need to adjust the pace of the demos accordingly.
 
-### 演示简介
+### Introduce the demo
 
-代码安全性是指为保护软件免受未经授权的访问、数据外泄和其他安全威胁而采取的措施。 代码安全性是软件开发的一个重要方面，涉及到保护应用程序和系统免受安全威胁。 提高代码安全性可以帮助保护应用程序和系统免受安全威胁。
+Code security refers to the measures taken to protect software from unauthorized access, data breaches, and other security threats. Code security is an essential aspect of software development that involves protecting applications and systems from security threats. Improving your code security can help you to protect your applications and systems from security threats.
 
 > [!IMPORTANT]
-> 向学员说明，本演示不是讲解有关开发安全代码的最佳做法。 而是重点介绍如何使用 GitHub Copilot Chat 来生成建议，以便改进示例应用程序中的代码安全性。 这些建议并不代表开发安全代码的最佳做法或综合性的解决方案。 开发人员应利用自身的判断和专业知识来评估和实现 GitHub Copilot Chat 提供的建议。 实施 GitHub Copilot 提出的建议并不能取代全面代码评审和测试的需要。
+> Explain to the students that this demo isn't about best practices for developing secure code. Instead, it focuses on how to use GitHub Copilot Chat to generate suggestions for improving code security in a sample application. The suggestions do not represent best practices or comprehensive solutions for developing secure code. Developers should use their judgment and expertise to evaluate and implement the suggestions provided by GitHub Copilot Chat. Implementing suggestions proposed by GitHub Copilot does not replace the need for thorough code reviews and testing.
 
-#### 代码安全
+#### Code security
 
-确保代码安全性是每个人的责任，而不仅仅是开发人员的责任。 但是，开发人员通过确保他们编写的代码遵循安全编码实践来发挥关键作用。 安全编码实践有助于确保软件漏洞不会被攻击者利用。 通过遵循安全编码实践，开发人员可以帮助保护软件免受安全威胁并确保其安全可靠。
+Ensuring code security is everyone's responsibility, not just the developer. However, developers play a crucial role by ensuring that the code they write follows secure coding practices. Secure coding practices help to ensure that software vulnerabilities can't be exploited by attackers. By following secure coding practices, developers can help protect the software from security threats and ensure that it is secure and reliable.
 
-以下各节概述了学员应了解的代码安全流程。
+The following sections provide an overview of code security processes that your students should be aware of.
 
-##### 使用综合方法评估代码安全性
+##### Evaluate code security using a comprehensive approach
 
-在评估代码安全性时，必须考虑涵盖软件开发生命周期各个方面的综合方法。 下面是一些关键注意事项：
+When evaluating code security, it’s important to consider a comprehensive approach that encompasses various aspects of the software development lifecycle. Here are some key considerations:
 
-- 安全编码实践：遵守安全编码标准和指南以防止漏洞。
-- 代码分析工具：利用静态和动态代码分析工具来检测安全漏洞。
-- 依赖项管理：确保第三方库和依赖项是最新的并且不存在已知漏洞。
-- 身份验证和授权：实现强大的身份验证和授权机制，以防止未经授权的访问。
-- 数据保护：对静态和传输中的敏感数据进行加密，以防止数据泄露。
-- 错误处理：开发不会泄露敏感信息的安全错误处理过程。
-- 安全测试：进行彻底的安全测试，包括渗透测试和漏洞评估。
-- 合规性：确保代码符合相关安全标准和法规。
-- 教育和培训：为开发人员提供持续的安全教育和培训，让他们了解最新的威胁和最佳做法。
-- 事件响应：妥善定义事件响应计划。 如果发生安全漏洞，事件响应计划必须易于访问。
+- Secure coding practices: Adhering to secure coding standards and guidelines to prevent vulnerabilities.
+- Code analysis tools: Utilizing static and dynamic code analysis tools to detect security flaws.
+- Dependency management: Ensuring that third-party libraries and dependencies are up-to-date and free from known vulnerabilities.
+- Authentication and authorization: Implementing robust authentication and authorization mechanisms to protect against unauthorized access.
+- Data protection: Encrypting sensitive data both at rest and in transit to prevent data breaches.
+- Error handling: Developing secure error handling procedures that do not expose sensitive information.
+- Security testing: Conducting thorough security testing, including penetration testing and vulnerability assessments.
+- Compliance: Ensuring that the code complies with relevant security standards and regulations.
+- Education and training: Providing developers with ongoing security education and training to keep them informed about the latest threats and best practices.
+- Incident response: Having a well-defined incident response plan prepared. If a security breach occurs, the incident response plan must be accessible.
 
-考虑这些因素并将安全最佳做法集成到开发过程将有助于创建安全的内容和应用程序。
+Considering these factors and integrating security best practices into your development process contributes to the creation of secure content and applications.
 
-##### 进行代码安全评审
+##### Conduct code security reviews
 
-在努力确保代码安全的同时，开发人员应检查代码的以下方面：
+When working to ensure that code is secure, developers should review the following aspects of their code:
 
-- 正确性：验证代码不存在可能导致安全漏洞的逻辑错误和缺陷。
-- 安全性：确保代码遵循安全最佳做法且不包含漏洞。
-- 诊断：提供适当的日志记录和诊断功能来检测和响应安全事件。
-- 设计错误或限制：评审代码的设计以确保不存在可被利用的缺陷或限制。
-- 缩放和性能：考虑代码的性能和可伸缩性。 性能和可伸缩性较差可能会影响高负载场景下的安全性。
-- 本地化：确保代码可以安全处理不同的区域设置，因为这可能会影响数据的格式和表示。
-- 易访问性 (UX)：验证安全措施不会对易访问性和用户体验产生负面影响。
-- 测试：评审测试策略并确保安全测试范围全面且涵盖代码的所有方面。
-- 检测：确保以支持安全监视和威胁检测的方式检测代码。
-- 一致性和代码样式约定：保持遵循安全编码指南和标准的一致编码样式。
+- Correctness: Verify that the code is free from logical errors and defects that could lead to security vulnerabilities.
+- Security: Ensure that code adheres to security best practices and doesn't contain vulnerabilities.
+- Diagnostics: Include proper logging and diagnostic capabilities to detect and respond to security incidents.
+- Design errors or limitations: Review the design of the code to ensure there are no flaws or limitations that could be exploited.
+- Scale and performance: Consider the performance and scalability of the code. Poor performance and scalability can impact security in high-load scenarios.
+- Localization: Ensure that the code securely handles different locales, which can affect data formatting and representation.
+- Accessibility (UX): Verify that security measures do not negatively impact the accessibility and user experience.
+- Testing: Review the testing strategies and ensure that security testing is thorough and covers all aspects of the code.
+- Instrumentation: Ensure that the code is instrumented in a way that supports security monitoring and threat detection.
+- Consistency and code style conventions: Maintain a consistent coding style that follows secure coding guidelines and standards.
 
-当开发人员评审代码的这些方面时，他们可以显著增强代码的安全性。 代码评审有助于开发人员为其开发的软件的整体安全态势做出贡献。
+When developers review these aspects of their code, they can significantly enhance the security of their code. Code reviews help developers contribute to the overall security posture of the software they develop.
 
-##### 分析代码漏洞
+##### Analyze code vulnerabilities
 
-应用程序的某些部分更容易受到安全攻击，因此重点保护这些方面至关重要。 下面是一些较脆弱的方面：
+Certain portions of an application are more vulnerable to security attacks, and it’s crucial to focus on securing these areas. Here are some of the more vulnerable areas:
 
-- 集成点：必须在相关产品团队的配合下对集成点进行安全设计评审。 评审对于处理高业务影响 (HBI) 数据或企业应用程序和服务的产品至关重要。
-- 内部系统：内部事件是安全漏洞的常见原因，尤其是在小型企业中。
-- 电子邮件系统：电子邮件服务器，特别是那些不受支持或未修补的服务器，始终容易受到攻击。
-- 数据库和存储：如果数据库在存储之前需要对敏感数据进行预加密，而数据没有按照预期进行加密，则数据库就容易受到攻击。
-- 运行时环境：运行时应用程序自我保护 (RASP) 等技术可以实时检测对应用程序的攻击，使运行时环境成为需要保护的关键方面。
-- Web 应用程序：Web 应用程序经常成为 SQL 注入、跨站点脚本 (XSS) 和缓冲区溢出等攻击方法的目标。
-- 终结点：设备和应用程序面临网络攻击的风险。 使用勒索软件缓解、应用程序控制、Web 保护和网络防火墙等功能来减少攻击面至关重要。
+- Integration points: Security design reviews must be conducted for integration points with dependent product teams. Reviews are essential for products handling high business impact (HBI) data or enterprise applications and services.
+- Internal systems: Internal incidents are a common cause of security breaches, especially in small businesses.
+- Email systems: Email servers, particularly those that are unsupported or unpatched, are persistently vulnerable.
+- Databases and storage: Databases that expect sensitive data to be pre-encrypted before storage can be vulnerable if the data is not encrypted as expected.
+- Runtime environment: Technologies like Runtime Application Self-Protection (RASP) can detect attacks on an application in real-time, making the runtime environment a critical area to secure.
+- Web applications: Web applications are often targeted by attackers using methods like SQL injection, cross-site scripting (XSS), and buffer overflows.
+- Endpoints: Devices and applications are at risk of cyber attacks. It’s essential to reduce the attack surface using capabilities like ransomware mitigation, application control, web protection, and network firewall.
 
-开发人员和安全团队应优先考虑这些方面并实施强有力的安全措施以防止潜在的攻击。 定期安全评审、更新和遵守最佳做法有助于缓解这些漏洞。
+Developers and security teams should prioritize these areas and implement strong security measures to protect against potential attacks. Regular security reviews, updates, and adherence to best practices can help mitigate these vulnerabilities.
 
-##### 搜索常见安全缺陷
+##### Search for common security flaws
 
-开发人员可能会在代码中遇到各种安全缺陷，如果处理不当，可能会导致漏洞。 一些典型的安全缺陷包括：
+Developers can encounter various security flaws in their code, which can lead to vulnerabilities if not properly addressed. Some typical security flaws include:
 
-- 注入缺陷：例如 SQL、NoSQL、OS 和 LDAP 注入，它们会将不受信任的数据作为命令或查询的一部分发送到解释器。
-- 身份验证失效：当身份验证和会话管理实施不当时，身份验证可能会失效。 正确的实施可确保密码、密钥和会话令牌不会被攻击者盗取。
-- 敏感数据暴露：对敏感数据的保护不足可能会导致其在网络传输或静止时暴露。
-- 访问控制失效：不正确实施控制授予经过身份验证的用户的访问权限的限制。
-- 跨站脚本 (XSS)：当应用程序在网页中包含不受信任的数据且未经适当验证或转义时，就会出现 XSS 缺陷。
-- 不安全的反序列化：这可能会导致远程代码执行、重播攻击、注入攻击和特权升级攻击。
-- 日志记录和监视不足：日志记录和监视不足，加上与事件响应的整合缺失或无效，导致攻击持续发生。
-- 不安全的直接对象引用（IDOR）：当应用程序根据用户提供的输入直接访问对象时，就会出现某种访问控制问题。
-- 缺少功能级别访问控制：有时，应用程序无法正确保护功能级访问控制，从而允许攻击者在未经适当授权的情况下伪造访问功能的请求。
+- Injection Flaws: Such as SQL, NoSQL, OS, and LDAP injection, where untrusted data is sent to an interpreter as part of a command or query.
+- Broken Authentication: When authentication and session management are implemented incorrectly, authentication can be broken. Good implementations ensure that passwords, keys, and session tokens aren't compromised by attackers.
+- Sensitive Data Exposure: Inadequate protection of sensitive data can lead to exposure during transfer over the network or at rest.
+- Broken Access Control: Restrictions that control the access granted to authenticated users are not being properly enforced.
+- Cross-Site Scripting (XSS): XSS flaws occur whenever an application includes untrusted data in a web page without proper validation or escaping.
+- Insecure Deserialization: This can lead to remote code execution, replay attacks, injection attacks, and privilege escalation attacks.
+- Insufficient Logging & Monitoring: Insufficient logging and monitoring, coupled with missing or ineffective integration with incident response, allows for continued attacks.
+- Insecure Direct Object References (IDOR): A type of access control issue that arises when an application provides direct access to objects based on user-supplied input.
+- Missing Function Level Access Control: Sometimes an application does not properly protect function level access controls, allowing attackers to forge requests to access functionality without proper authorization.
 
-代码中还存在许多其他安全缺陷。 开发人员必须使用工具和最佳做法来主动识别和修复这些问题。
+Many other security flaws can be found in code. It’s important for developers to use tools and best practices to identify and fix these issues proactively.
 
-### 为 GitHub Copilot Chat 开发提示
+### Develop prompts for GitHub Copilot Chat
 
-为 GitHub Copilot Chat 编写的提示应提供明确定义的上下文和意向。 在开发提示时请考虑以下建议：
+The prompts you write for GitHub Copilot Chat should provide a clearly defined context and intent. Consider the following suggestions when developing your prompts:
 
-- 定义一个范围级别比要更新的代码更高的外部上下文。 例如，如果你要改进某个方法，请将包含该方法的类或文件指定为外部上下文。 将方法标识为内部上下文。
-- 使用聊天参与者和聊天变量来帮助指定上下文。 可以使用 `#file:` 和 `#selection` 聊天变量来标识关注的特定代码。 在适当的情况下还可以包含完整的工作区 (`@workspace`)。 请参考提示的自然语言部分中的文件或代码选择。
-- 意向应清晰、简洁且具体。 提示应指定你想要实现的改进类型。
+- Define an outer context that's scoped at a higher level than the code you want to update. For example, if you want to improve a method, specify the class or file that includes the method as the outer context. Identify the method as an inner context.
+- Use chat participants and chat variables to help specify context. You can use the `#file:` and `#selection` chat variables to identify the specific code you are focused on. You can also include the full workspace (`@workspace`) when appropriate. Refer to the file or code selection in the natural language portion of your prompt.
+- The intent should be clear, concise, and specific. Your prompt should specify the type of improvement you want to achieve.
 
-在本演示的这一部分，你将查看 APL2007M5BankAccount-Security 项目，并为 GitHub Copilot 对话助手创建三个提示****。 这些提示主要用于提高代码安全性。
+During this portion of the demo, you review the **APL2007M5BankAccount-Security** project and create three prompts for GitHub Copilot Chat. The prompts focus on improving code security.
 
-请按照以下步骤完成本演示的这一部分：
+Use the following steps to complete this portion of the demo:
 
-1. 打开 APL2007M5BankAccount-Security 项目，然后查看 Program.cs 和 BankAccount.cs 代码文件************。
+1. Open the **APL2007M5BankAccount-Security** project, and then review the **Program.cs** and **BankAccount.cs** code files.
 
-    Program.cs 文件包含一个简单银行应用程序的代码，该应用程序模拟银行帐户的创建、交易和转帐****。
+    The **Program.cs** file contains the code for a simple banking application that simulates the creation of bank accounts, transactions, and transfers.
 
-    BankAccount.cs 文件包含 ****`BankAccount` 类的代码，该类代表具有存款、取款和余额查询等基本功能的银行帐户。
+    The **BankAccount.cs** file contains the code for the `BankAccount` class, which represents a bank account with basic functionalities such as deposit, withdrawal, and balance inquiry.
 
-1. 花一点时间简要说明一些可用于提升代码安全性的提示。
+1. Take a minute to describe some prompts that could be used to improve code security.
 
-    对于此项目，可以使用以下提示生成提高代码安全性的建议：
+    For this project, you can use the following prompts to generate suggestions for improving your code security:
 
-    提示：`@workspace /explain How can I implement authentication in the [selected code]?`（将 BankAccount.cs 附加到聊天上下文）
+    Prompt: `@workspace /explain How can I implement authentication in the [selected code]?` (attach BankAccount.cs to the Chat context)
 
-    提示：`@workspace /explain How can I protect sensitive data in the [selected code]?`（将 BankAccount.cs 附加到聊天上下文）
+    Prompt: `@workspace /explain How can I protect sensitive data in the [selected code]?` (attach BankAccount.cs to the Chat context)
 
-    提示：`@workspace /explain How can I implement logging of suspicious account activities of the [selected code]?`（将 BankAccount.cs 附加到聊天上下文）
+    Prompt: `@workspace /explain How can I implement logging of suspicious account activities of the [selected code]?` (attach BankAccount.cs to the Chat context)
 
-    提示：`@workspace /explain How can I improve the security of exception handling in the [selected code]?`（将 BankAccount.cs 附加到聊天上下文）
+    Prompt: `@workspace /explain How can I improve the security of exception handling in the [selected code]?` (attach BankAccount.cs to the Chat context)
 
-    提示：`@workspace /explain How can I improve the security of the [selected code]?`（将 BankAccount.cs 附加到聊天上下文）
+    Prompt: `@workspace /explain How can I improve the security of the [selected code]?` (attach BankAccount.cs to the Chat context)
 
-    提示：`@workspace /explain How can I improve the security of the [selected code]?`（将 Program.cs 附加到聊天上下文）
+    Prompt: `@workspace /explain How can I improve the security of the [selected code]?` (attach Program.cs to the Chat context)
 
-1. 从中选择三个提示，用于演示的后续环节。
+1. Select three prompts to use during the remainder of the demo.
 
-    尝试选择两个提示来解决 BankAccount.cs 文件中的安全问题，并选择一个提示来解决 Program.cs 文件中的安全问题。 在本演示中，BankAccount 类代表你的“产品”。 Program.cs 文件使用 BankAccount 类来模拟帐户活动和交易。
+    Try to select two prompts that address security issues in the BankAccount.cs file and one for the Program.cs file. In this demo, the BankAccount class represents your "product". The Program.cs file uses the BankAccount class to simulate account activities and transactions.
 
-### 使用 GitHub Copilot Chat 提高 BankAccount 类的代码安全性
+### Improve code security of the BankAccount class using GitHub Copilot Chat
 
-对于任何软件项目而言，开发安全代码都至关重要。 所需的安全级别取决于应用程序的性质及其处理的数据。
+Developing secure code is essential for any software project. The level of security required depends on the nature of the application and the data it processes.
 
-在本演示中，你将使用 GitHub Copilot 对话助手生成有关改进 APL2007M5BankAccount-Security 项目中 BankAccount 类的安全性的建议****。
+In this demonstration, you use GitHub Copilot Chat to generate suggestions for improving the security of the BankAccount class in the **APL2007M5BankAccount-Security** project.
 
-可以使用 GitHub Copilot Chat 来帮助提高代码安全性。 提示可以指示 GitHub Copilot 生成有关改进身份验证、数据保护、日志记录和其他数十个主题的建议。 还可以创建范围广泛的提示，以征求提高代码安全性的一般建议。 具体提示和一般提示的组合可帮助你识别需要改进的方面并实施所需的更改。
+GitHub Copilot Chat can be used to help improve code security. Your prompts can direct GitHub Copilot to generate suggestions for improving authentication, data protection, logging, and dozens of other topics. You can also create broadly scoped prompts that ask for general suggestions to improve code security. A combination of specific and general prompts can help you to identify areas that need improvement and implement the necessary changes.
 
 > [!TIP]
-> 实施和测试建议的更新需要时间，因此时间可能是本演示的一个因素。 选择注重于特定改进方面的提示可帮助你控制好时间。 过于宽泛的提示可能会生成大量的建议或复杂的建议，而这些建议很难在短时间内评估和实施。 开始后，如果你发现建议的更新范围太广或太复杂，可以使用更具体的详细信息来更新提示。
+> Implementing and testing suggested updates takes time, and time may be a factor during this demo. Selecting prompts that focus on specific areas of improvement can help you to manage your time. Prompts that are too broad may generate a large number of suggestions or complex suggestions that are difficult to evaluate and implement in a short amount of time. Once you begin, you can update your prompts with more specific details if you find that the suggested updates are too broadly scoped or too complex.
 
-1. 确保项目能够正确无误地生成和运行。
+1. Ensure that the project builds and runs without errors.
 
-    只要应用程序能够运行，警告就可以接受，但在开始使用 GitHub Copilot Chat 之前必须解决错误。
+    Warnings are acceptable as long as the application runs, but errors must be resolved before you start working with GitHub Copilot Chat.
 
-1. 在 Visual Studio Code 中打开 BankAccount.cs 文件，然后选择文件中的所有代码。
+1. Open the BankAccount.cs file in Visual Studio Code, and then select all of the code in the file.
 
-1. 打开“聊天”视图。
+1. Open the Chat view.
 
-1. 在“聊天”视图中，使用“附加上下文”按钮将相关文件添加到聊天上下文，然后输入提示。****
+1. In the Chat view, use the **Attach Context** button to add relevant files to the Chat context, and then enter your prompt.
 
-1. 查看 GitHub Copilot Chat 提供的建议。
+1. Review the suggestions provided by GitHub Copilot Chat.
 
-    例如，假设你已完成以下操作：
+    For example, suppose you complete the following actions:
 
-    - 打开 BankAccount.cs 文件并选择所有代码。
-    - 选择以下提示：`@workspace /explain How can I implement authentication in the BankAccount.cs file?`
-    - 打开“聊天”视图并将 BankAccount.cs 和 Program.cs 文件附加到聊天上下文。
-    - 在“聊天”视图中输入提示。
+    - You open the BankAccount.cs file and select all of the code.
+    - You choose the following prompt: `@workspace /explain How can I implement authentication in the BankAccount.cs file?`
+    - You open the Chat view and attach the BankAccount.cs and Program.cs files to the Chat context.
+    - You enter the prompt in the Chat view.
 
-    GitHub Copilot Chat 会建议类似于以下响应的更新：
+    GitHub Copilot Chat suggests updates that are similar to the following response:
 
-    ** 在当前上下文中，实现身份验证通常需要在 BankAccount 类中添加一个方法，用于在允许执行某些操作之前验证帐户持有人的身份。这可以通过使用密码、PIN 或其他形式的身份验证来实现。
+    *Implementing authentication in this context would typically involve adding a method to the BankAccount class that verifies the account holder's identity before allowing certain operations. This could be done using a password, a PIN, or some other form of authentication.*
 
-    以下简单示例演示如何将基于密码的身份验证添加到 BankAccount 类**：
+    *Here's a simple example of how you might add password-based authentication to the BankAccount class:*
 
     ```csharp
 
@@ -199,61 +199,61 @@ demo:
 
     ```
 
-    ** 在此示例中，密码作为参数添加到 BankAccount 构造函数中，并存储在一个专用字段中。添加了一个 Authenticate 方法，用于检查提供的密码是否与存储的密码匹配。Credit 方法（以及其他需要身份验证的方法）已修改为使用密码作为参数，并在执行操作之前调用 Authenticate。
+    *In this example, a password is added as a parameter to the BankAccount constructor and stored in a private field. An Authenticate method is added that checks if the provided password matches the stored password. The Credit method (and other methods that should require authentication) is modified to take a password as an argument and call Authenticate before performing the operation.*
 
-    ** 这是一种非常基本的身份验证形式，对于实际应用程序来说不够安全。在真实的应用程序中，你可能希望在存储密码之前对其进行哈希处理和加盐处理，并且需要使用安全的方法将用户提供的密码传输到应用程序。你还可能需要使用双因素身份验证或其他更安全的方法。
+    *This is a very basic form of authentication and is not secure enough for real applications. In a real application, you would want to hash and salt the password before storing it, and you would need to use secure methods to transmit the password from the user to the application. You might also want to consider using two-factor authentication or other more secure methods.*
 
-1. 实施建议的更新，以帮助提高 `BankAccount` 类的代码安全性。
+1. Implement the suggested updates that help to improve code security for your `BankAccount` class.
 
-    必须更新 Program.cs 文件才能使用添加到 BankAccount 类的密码和身份验证。 可以使用 GitHub Copilot Chat 生成更新 Program.cs 文件的建议。
+    The Program.cs file must be updated to use the password and authentication added to the BankAccount class. You can use GitHub Copilot Chat to generate suggestions for updating the Program.cs file.
 
-    1. 选择 Program.cs 文件的内容，将 Program.cs 和 BankAccount.cs 文件附加到聊天上下文，然后在“聊天”视图中输入以下提示：
+    1. Select the contents of the Program.cs file, attach the Program.cs and BankAccount.cs files to the Chat context, and then enter the following prompt in the Chat view:
 
         ```plaintext
         @workspace /Explain How can I update the Program.cs file to use the password and authentication added to BankAccount.cs?
         ```
 
-    1. 检查 GitHub Copilot Chat 提供的建议，然后实现建议的更新。
+    1. Review the suggestions provided by GitHub Copilot Chat, and then implement the suggested updates.
 
-    1. 为了确保更改不会造成错误，请在继续之前生成并运行解决方案。
+    1. To ensure that no errors were introduced by the changes, build and run your solution before continuing.
 
-        使用 GitHub Copilot 帮助解决生成过程中发现的任何问题。
+        Use GitHub Copilot to help resolve any issues identified during the build process.
 
     > [!IMPORTANT]
-    > 这种非常基础的身份验证方式对于实际应用程序来说不够安全，确保学员了解这一点。 在真实的应用程序中，你可能希望在存储密码之前对其进行哈希处理和加盐处理，并且需要使用安全的方法将用户提供的密码传输到应用程序。 你还可能想要使用双因素身份验证或其他更安全的方法。
+    > Ensure that your students understand this very basic form of authentication is not secure enough for real applications. In a real application, you would want to hash and salt the password before storing it, and you would need to use secure methods to transmit the password from the user to the application. You might also want to consider using two-factor authentication or other more secure methods.
 
-1. 在继续操作之前，请确保应用程序能够生成并运行。
+1. Ensure that your application builds and runs before continuing.
 
-1. 选择 BankAccount.cs 文件中的所有代码，然后在“聊天”视图中输入第二个提示。
+1. Select all of the code in the BankAccount.cs file, and then enter your second prompt in the Chat view.
 
-1. 查看 GitHub Copilot Chat 提供的建议。
+1. Review the suggestions provided by GitHub Copilot Chat.
 
-    例如，假设你已完成以下操作：
+    For example, suppose you complete the following actions:
 
-    - 打开 BankAccount.cs 文件并选择所有代码。
-    - 选择以下提示：`@workspace /explain How can I protect account numbers and account holder names in the selected code?`
-    - 打开“聊天”视图并将 BankAccount.cs 和 Program.cs 文件附加到聊天上下文。
-    - 在“聊天”视图中输入提示。
+    - You open the BankAccount.cs file and select all of the code.
+    - You choose the following prompt: `@workspace /explain How can I protect account numbers and account holder names in the selected code?`
+    - You open the Chat view and attach the BankAccount.cs and Program.cs files to the Chat context.
+    - You enter the prompt in the Chat view.
 
-    GitHub Copilot Chat 会建议类似于以下响应的更新：
+    GitHub Copilot Chat suggests updates that are similar to the following response:
 
-    *若要保护 BankAccount 类中的敏感数据（如帐号和帐户持有者姓名），可以执行以下步骤：*
+    *To protect sensitive data such as account numbers and account holder names in your BankAccount class, you can take the following steps:*
 
-    *1.使用封装：*
+    *1. Use Encapsulation:*
 
-    *- 使敏感属性变为私密，并通过方法提供受控的访问。*
+    *- Make the sensitive properties private and provide controlled access through methods.*
 
-    *2.加密敏感数据：*
+    *2. Encrypt Sensitive Data:*
 
-    *-使用加密安全地存储敏感数据。*
+    *-Use encryption to store sensitive data securely.*
 
-    *3.避免明文存储：*
+    *3. Avoid Plaintext Storage:*
 
-    *- 确保敏感数据未以明文形式存储或传输。*
+    *- Ensure that sensitive data is not stored or transmitted in plaintext.*
 
-    *更新后的实现*
+    *Updated Implementation*
 
-    *下面是对帐号和帐户持有者姓名使用加密的 BankAccount.cs 的更新版本：*
+    *Here is an updated version of BankAccount.cs that uses encryption for account numbers and account holder names:*
 
     ```csharp
 
@@ -521,56 +521,56 @@ demo:
 
     ```
 
-    *用法：*
+    *Usage:*
 
-    **- 确保你具备必要的加密库。为简单起见，上面的示例使用具有硬编码密钥和 IV 的 AES 加密。在实际应用程序中，应使用密钥管理服务安全地管理密钥和 IV。
+    *- Ensure you have the necessary cryptographic libraries available. The above example uses AES encryption with a hardcoded key and IV for simplicity. In a real-world application, you should securely manage keys and IVs, possibly using a key management service.*
 
     > [!IMPORTANT]
-    > 在实际应用程序中，应使用密钥管理服务安全地管理密钥和 IV。 此培训中提供的示例确定了改进领域，但并不代表安全加密的最佳做法。 可以使用 GitHub Copilot Chat 来寻求改进应用程序中的加密和数据保护的其他建议。
+    > In a real-world application, you should securely manage keys and IVs, possibly using a key management service. The examples provided in this training identify areas for improvement but do not represent best practices for secure encryption. You can use GitHub Copilot Chat to pursue additional suggestions for improving encryption and data protection in your application.
 
-1. 不需要为第二个提示实现建议的更新。
+1. Do not need to implement the suggested updates for the second prompt.
 
-    在此示例中，建议的更新有助于提高应用程序的安全性，但它们需要对 Program.cs 代码进行重大配置和更新，这不在本演示涵盖的范围内。
+    In the example, the suggested updates would help to improve the security of the application, but they require significant configuration and updates to the Program.cs code that is beyond the scope of this demo.
 
-### 使用 GitHub Copilot Chat 提高 Program 类的代码安全性
+### Improve code security of the Program class using GitHub Copilot Chat
 
-1. 在 Visual Studio Code 中打开 Program.cs 文件，然后选择文件中的所有代码。
+1. Open the Program.cs file in Visual Studio Code, and then select all of the code in the file.
 
-1. 打开“聊天”视图，然后输入你为 Program 类准备的第一个提示。
+1. Open the Chat view, and then enter the first prompt that you prepared for the Program class.
 
-1. 查看 GitHub Copilot Chat 提供的建议。
+1. Review the suggestions provided by GitHub Copilot Chat.
 
-    例如，假设你已完成以下操作：
+    For example, suppose you complete the following actions:
 
-    - 打开 Program.cs 文件并选择所有代码。
-    - 选择以下提示：`@workspace /explain How can I improve the security of the Program.cs file?`
-    - 打开“聊天”视图并将 BankAccount.cs 和 Program.cs 文件附加到聊天上下文。
-    - 在“聊天”视图中输入提示。
+    - You open the Program.cs file and select all of the code.
+    - You choose the following prompt: `@workspace /explain How can I improve the security of the Program.cs file?`
+    - You open the Chat view and attach the BankAccount.cs and Program.cs files to the Chat context.
+    - You enter the prompt in the Chat view.
 
-    GitHub Copilot Chat 会建议类似于以下响应的更新：
+    GitHub Copilot Chat suggests updates that are similar to the following response:
 
-    *若要提高 Program.cs 文件的安全性，应关注以下方面：*
+    *To improve the security of the Program.cs file, you should focus on the following areas:*
 
-    *1.安全密码处理：*
+    *1. Secure Password Handling:*
 
-    - 使用安全密码哈希，避免以纯文本形式存储密码。**
-    - 使用类似 BCrypt.Net 的库对密码进行哈希处理。**
+    *- Use secure password hashing and avoid storing passwords in plaintext.*
+    *- Use a library like BCrypt.Net for hashing passwords.*
 
-    *2.加密敏感数据：*
+    *2. Encrypt Sensitive Data:*
 
-    *- 加密敏感数据，例如帐号和帐户持有者姓名。*
+    *- Encrypt sensitive data such as account numbers and account holder names.*
 
-    *3.避免硬编码的密码：*
+    *3. Avoid Hardcoded Passwords:*
 
-    - 避免使用硬编码的密码。** 应生成强随机密码，或提示用户自行创建密码。
+    *- Avoid using hardcoded passwords. Instead, generate strong random passwords or prompt users to create their own.*
 
-    *4.使用安全随机数生成：*
+    *4. Use Secure Random Number Generation:*
 
-    *- 使用加密安全的随机数生成器生成敏感数据。*
+    *- Use a cryptographically secure random number generator for generating sensitive data.*
 
-    *更新后的实现*
+    *Updated Implementation*
 
-    *下面是包含这些改进的 Program.cs 的更新版本：*
+    *Here is an updated version of Program.cs that incorporates these improvements:*
 
     ```csharp
 
@@ -745,39 +745,39 @@ demo:
 
     ```
 
-1. 请注意，Program.cs 的更新侧重于安全随机数生成。
+1. Notice that the updates to Program.cs focused on secure random number generation.
 
-    其他建议适用于 BankAccount 类，而实现超出了此培训的范围。
+    The other suggestions apply to the BankAccount class, and the implementation is beyond the scope of this training.
 
-1. 为寻求保护异常处理的 Program.cs 构造额外的提示。
+1. Construct an additional prompt for Program.cs that seeks to secure exception handling.
 
-1. 查看 GitHub Copilot Chat 提供的建议。
+1. Review the suggestions provided by GitHub Copilot Chat.
 
-    例如，如果在“聊天”视图中输入 `@workspace /explain How can I implement secure exception handling in the Program.cs file?`，GitHub Copilot Chat 会建议类似于以下响应的更新：
+    For example, if you enter `@workspace /explain How can I implement secure exception handling in the Program.cs file?` in the Chat view, GitHub Copilot Chat suggests updates that are similar to the following response:
 
-    *若要在 Program.cs 文件中实现安全异常处理，应遵循以下最佳做法：*
+    *To implement secure exception handling in the Program.cs file, you should follow these best practices:*
 
-    *1.捕获特定异常：*
+    *1. Catch Specific Exceptions:*
 
-    - 捕获特定异常，而不是使用通用的 catch (Exception ex) 块。** 这有助于正确理解和处理不同类型的错误。
+    *- Catch specific exceptions rather than using a general catch (Exception ex) block. This helps in understanding and handling different types of errors appropriately.*
 
-    *2.安全记录异常：*
+    *2. Log Exceptions Securely:*
 
-    - 在不公开敏感信息的情况下安全地记录异常。** 使用记录框架管理日志。
+    *- Log exceptions securely without exposing sensitive information. Use a logging framework to manage logs.*
 
-    *3.提供用户友好消息：*
+    *3. Provide User-Friendly Messages:*
 
-    *- 提供用户友好的错误消息，而不显示内部详细信息。*
+    *- Provide user-friendly error messages without revealing internal details.*
 
-    *4.使用 Finally 块进行清理：*
+    *4. Use Finally Blocks for Cleanup:*
 
-    *- 使用 finally 块来确保执行任何必要的清理，而不考虑是否引发了异常。*
+    *- Use finally blocks to ensure that any necessary cleanup is performed, regardless of whether an exception was thrown.*
 
-    *5.避免捕获非关键异常：*
+    *5. Avoid Catching Non-Critical Exceptions:*
 
-    *- 避免捕获应允许传播的异常，例如 OutOfMemoryException 或 StackOverflowException。*
+    *- Avoid catching exceptions that should be allowed to propagate, such as OutOfMemoryException or StackOverflowException.*
 
-    *下面是具有安全异常处理的 Program.cs 的更新版本：*
+    *Here is an updated version of Program.cs with secure exception handling:*
 
     ```csharp
 
@@ -997,10 +997,10 @@ demo:
 
     ```
 
-1. 实现建议的更新，以帮助提高 `Program.cs` 文件的代码安全性。
+1. Implement the suggested updates that help to improve code security for your `Program.cs` file.
 
-1. 为了确保更改不会造成错误，请生成并运行解决方案。
+1. To ensure that no errors were introduced by the changes, build and run your solution.
 
-## 总结
+## Summary
 
-在本演示中，你已使用 GitHub Copilot 对话助手生成了建议，以提高示例应用程序中的代码安全性。 你开发了提示，以指示 GitHub Copilot 提供有关改进身份验证、数据保护、日志记录和其他安全相关主题的建议。 你实施了建议的更新，以提高 APL2007M5BankAccount-Security 项目中 BankAccount 类和 Program 类的安全性****。
+In this demo, you used GitHub Copilot Chat to generate suggestions for improving code security in a sample application. You developed prompts that directed GitHub Copilot to provide suggestions for improving authentication, data protection, logging, and other security-related topics. You implemented the suggested updates to improve the security of the BankAccount class and the Program class in the **APL2007M5BankAccount-Security** project.

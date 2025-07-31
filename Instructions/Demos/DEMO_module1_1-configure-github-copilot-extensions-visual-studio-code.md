@@ -1,113 +1,113 @@
 ---
 demo:
-  title: 演示：为 Visual Studio Code 配置 GitHub Copilot 扩展
-  module: 'Module 1: Get started with GitHub Copilot'
+    title: 'Demo: Configure GitHub Copilot extensions for Visual Studio Code'
+    module: 'Module 1: Get started with GitHub Copilot'
 ---
 
-# 演示：为 Visual Studio Code 配置 GitHub Copilot 扩展
+# Demo: Configure GitHub Copilot extensions for Visual Studio Code
 
-## 说明
+## Instructions
 
-这些演示活动专为包含以下资源的环境而设计：
+The demo activities are designed for an environment that includes the following resources:
 
-- Visual Studio Code。
-- 适用于 Visual Studio Code 的 C# 开发工具包扩展。
-- 适用于 Visual Studio Code 的 GitHub Copilot 和 GitHub Copilot Chat 扩展。 需要具有 GitHub Copilot 活动订阅的 GitHub 帐户。
-- 使用 C# 创建的示例代码项目。
+- Visual Studio Code.
+- The C# Dev Kit extension for Visual Studio Code.
+- The GitHub Copilot and GitHub Copilot Chat extensions for Visual Studio Code. A GitHub account with an active subscription for GitHub Copilot is required.
+- Sample code projects created using C#.
 
-注意****：我们建议讲师在演示过程中使用自己的 GitHub 帐户和 GitHub Copilot 订阅。 这样可以更好地控制和自定义开发环境。 此外，还可以更轻松地根据课堂需求调整演示内容。
+**NOTE**: We recommend that instructors consider using their own GitHub account and GitHub Copilot subscription for the demos. This will enable you to control and customize your dev environment. It will also make it easier to adjust the demos to fit the needs of your classrooms.
 
-**重要说明**：如果选择在托管实验室环境中运行演示，而不是在讲师电脑上进行演示，则可以在托管环境中解压缩示例应用。 在运行演示之前，需要在托管环境中配置 GitHub Copilot 扩展。 你可能会发现托管环境的运行速度较本地环境慢一些，因此在演示过程中可能需要相应地调整节奏。
+**IMPORTANT**: If you choose to run the demos in the hosted lab environment rather than your instructor PC, you can unzip the sample apps in the hosted environment. You will need to configure the GitHub Copilot extensions in the hosted environment before you can run the demos. You may find that the hosted environment is slower than your local environment, so you may need to adjust the pace of the demos accordingly.
 
-### 演示简介
+### Introduce the demo
 
-GitHub Copilot 设置在 GitHub.com 帐户和 Visual Studio Code 环境中配置。 在 Visual Studio Code 中，请使用 GitHub Copilot 状态菜单访问 GitHub Copilot 和 GitHub Copilot Chat 的设置。
+GitHub Copilot settings are configured in your GitHub.com account and the Visual Studio Code environment. In Visual Studio Code, you access settings for GitHub Copilot and GitHub Copilot Chat using the GitHub Copilot status menu.
 
-通过 Visual Studio Code 中的这些设置，你可以启用或禁用特定语言的 GitHub Copilot，配置 GitHub Copilot 对话助手的行为，并根据自己的偏好自定义 GitHub Copilot 体验。 还可以在 GitHub.com 上配置 GitHub Copilot 设置，以管理 GitHub Copilot 订阅，配置提示和建议的保留，以及允许或阻止与公共代码匹配的建议。
+The settings in Visual Studio Code allow you to enable or disable GitHub Copilot for specific languages, configure the behavior of GitHub Copilot Chat, and customize the GitHub Copilot experience to suit your preferences. You can also configure GitHub Copilot settings on GitHub.com to manage your GitHub Copilot subscription, configure the retention of prompts and suggestions, and allow or block suggestions matching public code.
 
-## 启用或禁用 GitHub Copilot
+## Enable or disable GitHub Copilot
 
-在 Visual Studio Code 中安装扩展时，默认启用 GitHub Copilot。 可以根据需要禁用 GitHub Copilot 一段时间。
+GitHub Copilot is enabled by default when you install the extension in Visual Studio Code. You can disable GitHub Copilot for a period of time if you need to.
 
-若要显示 GitHub Copilot 扩展的启用和禁用选项，请执行以下步骤：
+To show the enable and disable options for the GitHub Copilot extension, follow these steps:
 
-1. 在 Visual Studio Code 中，打开“扩展”视图****。
+1. In Visual Studio Code, open the **Extensions** view.
 
-1. 在已安装的扩展列表中，向下滚动，直到找到 GitHub Copilot****。
+1. In the list of installed extensions, scroll down until you find **GitHub Copilot**.
 
-1. 若要显示列出“启用和禁用”选项的 GitHub Copilot 扩展的下拉菜单，请选择 GitHub Copilot 旁边的齿轮图标。
+1. To display a dropdown menu for the GitHub Copilot extension that lists Enable and Disable options, select on the gear icon next to GitHub Copilot.
 
-如果要演示启用/禁用选项，可以选择禁用选项。 但是，在继续本演示之前，请务必重新启用 GitHub Copilot。
+If you want to demonstrate the enable/disable options, you can select the disable option. However, be sure to re-enable GitHub Copilot before you continue with this demo.
 
-## 在 Visual Studio Code 中配置 GitHub Copilot 和 Copilot Chat
+## Configure GitHub Copilot and Copilot Chat in Visual Studio Code
 
-在 Visual Studio Code 中安装扩展时，GitHub Copilot 扩展会以默认设置进行配置。 可以根据自己的偏好自定义这些设置。
+The GitHub Copilot extensions are configured with default settings when you install the extensions in Visual Studio Code. You can customize these settings to suit your preferences.
 
-Visual Studio Code 提供了两种访问 GitHub Copilot 扩展设置的方法：
+Visual Studio Code provides two ways to access the settings for the GitHub Copilot extensions:
 
-- 可以使用 `Manage` 图标打开“Visual Studio Code 设置”选项卡。在“设置”选项卡上，可以选择“扩展”，然后选择“Copilot”********。
-- 可以使用 GitHub Copilot 状态图标访问 GitHub Copilot 状态菜单，然后选择“编辑设置”****。
+- You can use `Manage` icon to open the Visual Studio Code Settings tab. On the Settings tab, you can select **Extensions** and then select **Copilot**.
+- You can use the GitHub Copilot status icon to access the GitHub Copilot status menu and then select **Edit Settings**.
 
-演示如何使用 GitHub Copilot 状态菜单访问设置。 这将打开 Visual Studio Code 的“设置”选项卡，并筛选出与 GitHub Copilot 相关的设置项。 使用状态菜单是访问 GitHub Copilot 扩展设置的最快捷方法。
+Demonstrate using the GitHub Copilot status menu to access settings. This opens the Visual Studio Code Settings tab with settings filtered for GitHub Copilot. Using the status menu is the quickest way to access the settings for the GitHub Copilot extensions.
 
-### 配置 GitHub Copilot 设置
+### Configure GitHub Copilot settings
 
-若要显示 GitHub Copilot 的配置设置，请执行以下步骤：
+To show the configuration settings for GitHub Copilot, follow these steps:
 
-1. 在 Visual Studio Code 窗口的底部面板中，要打开 GitHub Copilot 状态菜单，请选择 GitHub Copilot 状态图标。
+1. On the bottom panel of the Visual Studio Code window, to open the GitHub Copilot status menu, select the GitHub Copilot status icon.
 
-    GitHub Copilot 状态图标指示 GitHub Copilot 是启用还是禁用。 启用后，图标的背景色与状态栏的颜色匹配。 禁用后，图标的背景色与状态栏的颜色形成对比。
+    The GitHub Copilot status icon indicates whether GitHub Copilot is enabled or disabled. When enabled, the background color of the icon matches the color of the status bar. When disabled, the background color of the icon contrasts with the color of the status bar.
 
-1. 在 GitHub Copilot 状态菜单中，选择“编辑设置”****。
+1. In the GitHub Copilot status menu, select **Edit Settings**.
 
-1. 请花一分钟查看可用设置列表。
+1. Take a minute to review the list of available settings.
 
-    请注意，GitHub Copilot 和 GitHub Copilot Chat 的设置都已列出。 此外，在左侧的“扩展”标签下，两个扩展都标记为 Copilot。 第一个 Copilot 扩展针对 GitHub Copilot，第二个扩展针对 GitHub Copilot Chat。
+    Notice that the settings for both GitHub Copilot and GitHub Copilot Chat are listed. Also, under the Extensions label on the left, both extensions are labeled as Copilot. The first Copilot extension is for GitHub Copilot and the second is for GitHub Copilot Chat.
 
-1. 在“扩展”标签下，选择第一个 Copilot 扩展。
+1. Under the Extensions label, select the first Copilot extension.
 
-    请注意，设置列表现在仅针对 GitHub Copilot 进行筛选。
+    Notice that the settings list is now filtered for GitHub Copilot only.
 
-    GitHub Copilot 的设置包括以下选项：
+    The settings for GitHub Copilot include the following options:
 
-    - 启用自动完成
-    - 启用或禁用指定语言的 Copilot 完成
+    - Enable Auto Completions
+    - Enable or disable Copilot completions for specified languages
 
-1. 花一分钟时间查看**启用或禁用指定语言的 Copilot 完成**的设置。
+1. Take a minute to review the settings for **Enable or disable Copilot completions for specified languages**.
 
-    请注意，该选项的设置是使用语言列表和 **true** 或 **false** 值来配置的，以便为每种语言启用或禁用 GitHub Copilot。 默认情况下，为所有语言启用 GitHub Copilot。 在第一行使用通配符 `*` 和值 **true** 指定此设置。 后续行指定为哪些语言启用或禁用 GitHub Copilot。 例如，为 C#、JavaScript 和 Python 启用了 GitHub Copilot，而为 Plaintext 和 Markdown 禁用了 GitHub Copilot********************。
+    Notice that the settings for this option are configured using a list of languages and a value of **true** or **false** to enable or disable GitHub Copilot for each language. By default, GitHub Copilot is enabled for all languages. This setting is specified with the wildcard character `*` on the first row and the value **true**. The subsequent rows specify languages for which GitHub Copilot is enabled or disabled. For example, GitHub Copilot is enabled for **C#**, **JavaScript**, and **Python** and disabled for **Plaintext** and **Markdown**.
 
-1. 在“启用或禁用指定语言的 Copilot 完成”下，选择“markdown”********。
+1. Under **Enable or disable Copilot completions for specified languages**, select **markdown**.
 
-    请注意，Markdown 的值设置为“false”****。 这意味着对 Markdown 文件禁用 GitHub Copilot。
+    Notice that the value for Markdown is set to **false**. This means that GitHub Copilot is disabled for Markdown files.
 
-1. 要为 Markdown 文件启用 Copilot，请选择“编辑项”（铅笔图标），选择“false”，将值更改为“true”，然后选择“确定”****************。
+1. To enable Copilot for Markdown files, select **Edit Item** (pencil icon), select **false**, change the value to **true**, and then select **OK**.
 
-    现在可以使用 GitHub Copilot 来协助处理使用 Markdown 文件的文档项目。
+    You can now use GitHub Copilot document projects using Markdown files.
 
-1. 在“扩展”标签下，选择第二个 Copilot 扩展。
+1. Under the Extensions label, select the second Copilot extension.
 
-    请注意，设置列表现在仅针对 GitHub Copilot Chat 进行筛选。
+    Notice that the settings list is now filtered for GitHub Copilot Chat only.
 
-    GitHub Copilot 聊天的设置包括**预览**和**试验**选项。 设置选项包括以下选项：
+    The settings for GitHub Copilot Chat include **Preview** and **Experimental** options. Setting choices include the following options:
 
-    - **修复测试失败**：此选项默认启用，以便 GitHub Copilot 可以提供修复测试失败的建议。
-    - **跟进**：默认情况下，此设置设置为 **firstOnly**，这意味着 GitHub Copilot 仅在第一个建议之后提供跟进建议。 其他选项为“**始终**”和“**从不**”。
-    - **本地替代**：默认情况下，此选项设置为“**自动**”，这意味着 GitHub Copilot 使用 Visual Studio Code 显示语言的区域设置。
-    - **范围选择**：该选项默认禁用。 启用后，当用户在 Chat 中使用 `/explain` 而没有在编辑器中选择任何内容时，系统会提示用户输入范围符号。
-    - **终端聊天位置**：默认设置为 chatView，它指定聊天视图。 其他选项用于快速聊天区域和终端。
-    - **使用项目模板**：该选项默认启用，这样当用户在 Chat 中使用 `/new` 时，GitHub Copilot 会使用相关的 GitHub 项目模板。
-    - **启用代码操作**：该选项默认启用，以便 GitHub Copilot 在编辑器中提供代码操作。
-    - **自动触发**：此选项默认启用，以便在键入时自动显示 GitHub Copilot 建议。
+    - **Fix Test Failure**: This option is enabled by default so that GitHub Copilot can provide suggestions for fixing test failures.
+    - **Follow Ups**: By default, this setting is set to **firstOnly**, which means that GitHub Copilot provides follow-up suggestions only after the first suggestion. The other options are **always** and **never**.
+    - **Local Override**: By default, this option is set to **auto**, which means that GitHub Copilot uses the locale of the Visual Studio Code display language.
+    - **Scope Selection**: This option is disabled by default. When enabled, the user is prompted for a scope symbol when the user uses `/explain` in Chat without anything selected in the Editor.
+    - **Terminal Chat Location**: The default setting is chatView, which specifies the Chat View. The other options are for the Quick Chat area and the Terminal.
+    - **Use Project Templates**: This option is enabled by default so that GitHub Copilot uses relevant GitHub project templates when the user uses `/new` in Chat.
+    - **Enable Code Actions**: This option is enabled by default so that GitHub Copilot can provide code actions in the Editor.
+    - **Trigger Automatically**: This option is enabled by default so that GitHub Copilot suggestions are shown automatically as you type.
 
-    我们建议在此培训期间保留默认设置。 这有助于确保你在学习本学习路径中的模块时获得预期的体验。 完成培训后，可以尝试使用这些设置来自定义自己的 GitHub Copilot 和 Copilot Chat 体验。
+    We recommend keeping the default settings during this training. This helps to ensure that you have the expected experience when working on the modules in this learning path. When you have completed the training, you can experiment with these settings to customize your experience with GitHub Copilot and Copilot Chat.
 
-## 在 GitHub.com 上配置 GitHub Copilot 设置
+## Configure GitHub Copilot settings on GitHub.com
 
-GitHub.com 上的 GitHub 帐户设置包括用于配置 GitHub Copilot 的选项。 这些设置用于管理 GitHub Copilot 订阅，配置提示和建议的保留，以及允许或阻止与公共代码匹配的建议。
+Your GitHub account settings on GitHub.com include options for configuring GitHub Copilot. These settings are used to manage your GitHub Copilot subscription, configure the retention of prompts and suggestions, and allow or block suggestions matching public code.
 
-GitHub Copilot 可通过 GitHub Copilot Individual 个人帐户或 GitHub Copilot Business/Enterprise 组织帐户进行管理。
+GitHub Copilot can be managed through personal accounts with GitHub Copilot Individual or through organization accounts with GitHub Copilot Business/Enterprise.
 
-## GitHub Copilot 的键盘快捷方式
+## Keyboard shortcuts for GitHub Copilot
 
-使用 GitHub Copilot 时，可以在 Visual Studio Code 中使用默认键盘快捷方式。 也可使用每个特定命令的首选键盘快捷方式在键盘快捷方式编辑器中重新绑定快捷方式。
+You can use the default keyboard shortcuts in Visual Studio Code when using GitHub Copilot. Alternatively, you can rebind the shortcuts in the Keyboard Shortcuts editor using your preferred keyboard shortcuts for each specific command.
