@@ -1,59 +1,59 @@
 ---
 demo:
-  title: 演示：使用 GitHub Copilot 对话助手生成内联代码文档
-  module: 'Module 2: Generate documentation using GitHub Copilot tools'
+    title: 'Demo: Generate inline code documentation by using GitHub Copilot Chat'
+    module: 'Module 2: Generate documentation using GitHub Copilot tools'
 ---
 
-# 演示：使用 GitHub Copilot 对话助手生成内联代码文档
+# Demo: Generate inline code documentation by using GitHub Copilot Chat
 
-## 说明
+## Instructions
 
-这些演示活动专为包含以下资源的环境而设计：
+The demo activities are designed for an environment that includes the following resources:
 
-- Visual Studio Code。
-- 适用于 Visual Studio Code 的 C# 开发工具包扩展。
-- 适用于 Visual Studio Code 的 GitHub Copilot 和 GitHub Copilot Chat 扩展。 需要具有 GitHub Copilot 活动订阅的 GitHub 帐户。
-- 使用 C# 创建的示例代码项目。
+- Visual Studio Code.
+- The C# Dev Kit extension for Visual Studio Code.
+- The GitHub Copilot and GitHub Copilot Chat extensions for Visual Studio Code. A GitHub account with an active subscription for GitHub Copilot is required.
+- Sample code projects created using C#.
 
-注意****：我们建议讲师在演示过程中使用自己的 GitHub 帐户和 GitHub Copilot 订阅。 这样可以更好地控制和自定义开发环境。 此外，还可以更轻松地根据课堂需求调整演示内容。
+**NOTE**: We recommend that instructors consider using their own GitHub account and GitHub Copilot subscription for the demos. This will enable you to control and customize your dev environment. It will also make it easier to adjust the demos to fit the needs of your classrooms.
 
-**重要说明**：如果选择在托管实验室环境中运行演示，而不是在讲师电脑上进行演示，则可以在托管环境中解压缩示例应用。 在运行演示之前，需要在托管环境中配置 GitHub Copilot 扩展。 你可能会发现托管环境的运行速度较本地环境慢一些，因此在演示过程中可能需要相应地调整节奏。
+**IMPORTANT**: If you choose to run the demos in the hosted lab environment rather than your instructor PC, you can unzip the sample apps in the hosted environment. You will need to configure the GitHub Copilot extensions in the hosted environment before you can run the demos. You may find that the hosted environment is slower than your local environment, so you may need to adjust the pace of the demos accordingly.
 
-### 演示简介
+### Introduce the demo
 
-生成代码文档是软件开发过程的一个重要方面。 内联文档（代码注释）可以帮助开发人员理解代码库、其目的以及使用方法。
+Documenting your code is an important aspect of the software development process. Inline documentation (code comments) help developers understand the codebase, its purpose, and how to use it.
 
-GitHub Copilot Chat 可帮助你快速准确地记录代码。 有几个选项可用于使用 GitHub Copilot Chat 生成内联文档：
+GitHub Copilot Chat can help you document your code quickly and accurately. You have a few options for generating inline documentation using GitHub Copilot Chat:
 
-- 自行构建可用于生成特定文档的自然语言提示。
-- 在内联聊天会话期间使用 `/doc` 命令为所选代码生成注释。
-- 使用“生成文档”智能操作为所选代码生成注释。****
+- Construct your own natural language prompt that can be used to generate specific documentation.
+- Use the `/doc` command during an inline chat session to generate comments for selected code.
+- Use the **Generate Docs** smart action to generate comments for selected code.
 
-正确记录代码可创建更具可读性和可维护性的代码库，让其他开发人员更容易理解和使用。
+Properly documenting your code creates a more readable and maintainable codebase that's easier for other developers to understand and work with.
 
-### 使用“聊天”视图生成内联代码文档
+### Generate inline code documentation using the Chat view
 
-在本演示中，你将使用 GitHub Copilot 对话助手为 `APL2007M2Sample1` 项目生成内联代码文档。
+In this demonstration, you use GitHub Copilot Chat to generate inline code documentation for the `APL2007M2Sample1` project.
 
-请使用以下步骤完成本演示的这一部分：
+Use the following steps to complete this section of the demo:
 
-1. 确保在 Visual Studio Code 中打开了 `APL2007M2Sample1` 项目。
+1. Ensure that you have the `APL2007M2Sample1` project open in Visual Studio Code.
 
-1. 打开 `MainWindow.xaml.cs` 文件。
+1. Open the `MainWindow.xaml.cs` file.
 
-1. 选择从命名空间声明开始到文件结尾的所有代码。
+1. Select all of the code starting from the namespace declaration to the end of the file.
 
-1. 打开“聊天”视图。
+1. Open the Chat view.
 
-1. 若要查看 GitHub Copilot Chat 如何记录所选代码，请输入以下提示：
+1. To see how GitHub Copilot Chat would document the selected code, enter the following prompt:
 
     ```output
     @workspace #selection generate inline code documentation for the selected code
     ```
 
-1. 花一分钟时间查看建议的代码文档。
+1. Take a minute to review the suggested code documentation.
 
-    生成的响应应类似于以下代码示例：
+    The generated response should look similar to the following code sample:
 
     ```csharp
 
@@ -165,56 +165,56 @@ GitHub Copilot Chat 可帮助你快速准确地记录代码。 有几个选项�
 
     ```
 
-    响应包括建议的代码注释和一部分相关代码**。 为了简洁起见，可能会省略某些代码。 可以手动将代码注释移动到实际代码文件中。
+    The response includes suggested code comments and *a portion* of the associated code. Some of your code may be omitted for brevity. You could manually move code comments into the actual code file.
 
-    内联聊天提供了向代码添加注释的更直接的方法。
+    Inline chat provides a more direct approach for adding comments to your code.
 
-### 使用内联聊天生成内联代码文档
+### Generate inline code documentation using inline chat
 
-1. 滚动到 `MainWindow.xaml.cs` 文件的顶部。
+1. Scroll to the top of the `MainWindow.xaml.cs` file.
 
-1. 选择 `OnStartButtonClick` 方法。
+1. Select the `OnStartButtonClick` method.
 
-1. 若要打开内联聊天，请按 Ctrl+I****。
+1. To open an inline chat, press **Ctrl+I**.
 
-1. 若要为 `OnStartButtonClick` 方法生成内联文档，请输入以下提示：
+1. To generate inline documentation for the `OnStartButtonClick` method, enter the following prompt:
 
     ```output
     /doc
     ```
 
-1. 花一分钟时间查看生成的代码文档。
+1. Take a minute to review the code documentation generated.
 
-    请注意，`OnStartButtonClick` 方法的建议文档包括两个参数的摘要和说明。 当方法包含返回值时，也会包含返回值的说明。
-
-    > [!IMPORTANT]
-    > 在接受之前，请始终查看 GitHub Copilot 建议的更新。 如果发现建议的代码更新中存在问题，可以放弃该更新，或者在接受建议的代码更新之前尝试纠正该问题。
-
-1. 若要放弃建议的更新，请选择“放弃”****。
-
-    在下一部分中，将一次性为所有方法生成文档。
-
-### 使用“生成文档”智能操作生成内联代码文档****
-
-“生成文档”智能操作是生成内联代码文档的另一种方法。**** 你可以使用此智能操作生成描述所选代码的注释。
-
-请使用以下步骤完成本演示的这一部分：
-
-1. 在 Visual Studio Code 编辑器中，选择 `MainWindow` 类中的所有方法**。
-
-1. 右键单击所选代码，选择“Copilot”，然后选择“生成文档”********。
-
-    等待文档生成。
-
-1. 查看建议的更改。
+    Notice that the suggested documentation for the `OnStartButtonClick` method includes a summary and descriptions of the two parameters. When a method includes a return value, a description of the return value is also included.
 
     > [!IMPORTANT]
-    > 如果在生成的文档中发现问题，请先修改建议的更改，然后再继续操作。
+    > Always review the GitHub Copilot's suggested updates before accepting. If you discover an issue in a suggested code update, you can either discard the update or attempt to correct the issue before accepting the suggested code update.
 
-1. 选择“接受”。
+1. To discard the suggested update, select **Discard**.
 
-    `MainWindow` 类中的每个方法现在都包含生成的注释。
+    In the next section, you generate documentation for all of the methods at once.
 
-### 总结
+### Generate inline code documentation using the **Generate Docs** smart action
 
-在本演示中，你使用 GitHub Copilot 对话助手为 `APL2007M2Sample1` 应用生成了内联代码文档。 你已了解如何使用“聊天”视图、内联聊天和“生成文档”智能操作生成内联代码文档****。 通过生成代码注释，可以创建更具可读性和可维护性的代码库，让其他开发人员更容易理解和使用。 内联代码文档是软件开发的重要组成部分，可帮助开发人员了解代码库、其目的以及使用方法。
+The **Generate Docs** smart action is another way to generate inline code documentation. You can use this smart action to generate comments that describe the selected code.
+
+Use the following steps to complete this section of the demo:
+
+1. In the Visual Studio Code editor, select all of the methods *inside* the `MainWindow` class.
+
+1. Right-click the selected code, select **Copilot**, and then select **Generate Docs**.
+
+    Wait for the documentation to be generated.
+
+1. Review the suggested changes.
+
+    > [!IMPORTANT]
+    > If you find issues in the generated documentation, modify the suggested changes before continuing.
+
+1. Select **Accept**.
+
+    Each of the methods in the `MainWindow` class now includes generated comments.
+
+### Summary
+
+In this demo, you used GitHub Copilot Chat to generate inline code documentation for the `APL2007M2Sample1` app. You learned how to generate inline code documentation using the Chat view, inline chat, and the **Generate Docs** smart action. By generating code comments, you can create a more readable and maintainable codebase that's easier for other developers to understand and work with. Inline code documentation is an essential part of software development that helps developers understand the codebase, its purpose, and how to use it.

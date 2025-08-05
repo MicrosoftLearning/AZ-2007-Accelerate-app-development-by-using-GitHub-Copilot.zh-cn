@@ -1,61 +1,61 @@
 ---
 demo:
-  title: 演示准备任务：为 AZ-2007 讲师演示准备“示例应用”
-  module: Module 2-5
+    title: 'Demo Prep Task: Prepare the "Sample Apps" for AZ-2007 instructor demonstrations'
+    module: 'Module 2-5'
 ---
 
-# 为 AZ-2007 讲师演示准备示例应用程序
+# Prepare the Sample Applications for AZ-2007 instructor demonstrations
 
-## 说明
+## Instructions
 
-### 在 Visual Studio Code 环境中准备示例应用
+### Prepare sample apps in your Visual Studio Code environment
 
-本课程中的模块包括 GitHub Copilot 的讲师演示活动。 大多数演示会使用预先准备好的代码示例作为活动的开始阶段。
+The modules in this course include GitHub Copilot instructor demonstration activities. Most of the demonstrations use a prepared code sample as a starting point for the activity.
 
-这些演示活动专为包含以下资源的环境而设计：
+The demo activities are designed for an environment that includes the following resources:
 
-- Visual Studio Code。
-- 适用于 Visual Studio Code 的 C# 开发工具包扩展。
-- 适用于 Visual Studio Code 的 GitHub Copilot 和 GitHub Copilot Chat 扩展。 需要具有 GitHub Copilot 活动订阅的 GitHub 帐户。
-- 使用 C# 创建的示例代码项目。
+- Visual Studio Code.
+- The C# Dev Kit extension for Visual Studio Code.
+- The GitHub Copilot and GitHub Copilot Chat extensions for Visual Studio Code. A GitHub account with an active subscription for GitHub Copilot is required.
+- Sample code projects created using C#.
 
-注意****：我们建议讲师在演示过程中使用自己的 GitHub 帐户和 GitHub Copilot 订阅。 这样可以更好地控制和自定义开发环境。 此外，还可以更轻松地根据课堂需求调整演示内容。
+**NOTE**: We recommend that instructors consider using their own GitHub account and GitHub Copilot subscription for the demos. This will enable you to control and customize your dev environment. It will also make it easier to adjust the demos to fit the needs of your classrooms.
 
-**重要说明**：如果选择在托管实验室环境中运行演示，而不是在讲师电脑上进行演示，则可以在托管环境中解压缩示例应用。 在运行演示之前，需要在托管环境中配置 GitHub Copilot 扩展。 你可能会发现托管环境的运行速度较本地环境慢一些，因此在演示过程中可能需要相应地调整节奏。
+**IMPORTANT**: If you choose to run the demos in the hosted lab environment rather than your instructor PC, you can unzip the sample apps in the hosted environment. You will need to configure the GitHub Copilot extensions in the hosted environment before you can run the demos. You may find that the hosted environment is slower than your local environment, so you may need to adjust the pace of the demos accordingly.
 
-若要准备演示，请在所选的开发环境中完成以下步骤：
+To prepare for the demos, complete the following steps in your chosen dev environment:
 
-1. 若要下载包含示例应用的 zip 文件，请打开以下链接：[SampleApps](https://raw.githubusercontent.com/MicrosoftLearning/APL-2007-Accelerate-app-development-by-using-GitHub-Copilot/master/LearnModuleExercises/Downloads/SampleApps.zip)。
+1. To download a zip file containing the sample apps, open the following link: [SampleApps](https://raw.githubusercontent.com/MicrosoftLearning/APL-2007-Accelerate-app-development-by-using-GitHub-Copilot/master/LearnModuleExercises/Downloads/SampleApps.zip).
 
-    zip 文件应会自动下载。
+    The zip file should download automatically.
 
-1. 解压缩已下载的 SampleApps 文件。
+1. Unzip the downloaded SampleApps file.
 
-    解压缩开发环境中的文件。
+    Unzip the files in your development environment.
 
-    1. 在本地计算机上，导航到下载文件夹。
-    1. 右键单击 SampleApps.zip，然后选择“全部提取”********。
-    1. 选择“完成时显示解压缩的文件”，然后选择“解压缩”。
+    1. On your local machine, navigate to your downloads folder.
+    1. Right-click **SampleApps.zip**, and then select **Extract all**.
+    1. Select **Show extracted files when complete**, and then select **Extract**.
 
-1. 将提取的 SampleApps 文件夹复制到 Windows 桌面文件夹****。
+1. Copy the extracted **SampleApps** folder to your Windows Desktop folder.
 
-    SampleApps**** 文件夹包含课程演示中所用的示例应用项目。 每个项目都位于各自的文件夹中。 演示说明会指明每个演示所需打开的项目。
+    The **SampleApps** folder contains the sample app projects used in the course demos. Each project is in it's own folder. The demo instructions indicate which project to open for that demo.
 
-1. 请在授课前逐个练习 12 个讲师演示。
+1. Practice each of the 12 instructor demonstrations before teaching the class.
 
-    这将帮助你熟悉完成活动所需的内容和步骤。
+    This will help you become familiar with the content and the steps required to complete the activities.
 
-    - 演示 1（模块 1 中的演示 1）：为 Visual Studio Code 配置 GitHub Copilot 扩展
-    - 演示 2（模块 2 中的演示 1）：使用 GitHub Copilot 对话助手生成代码说明
-    - 演示 3（模块 2 中的演示 2）：使用 GitHub Copilot 对话助手生成项目文档
-    - 演示 4（模块 2 中的演示 3）：使用 GitHub Copilot 对话助手生成内联代码文档
-    - 演示 5（模块 3 中的演示 1）：使用代码行补全创建代码
-    - 演示 6（模块 3 中的演示 2）：使用 GitHub Copilot 内联聊天创建代码
-    - 演示 7（模块 3 中的演示 3）：使用 GitHub Copilot 工具开发代码功能
-    - 演示 8（模块 4 中的演示 1）：使用 GitHub Copilot 对话助手创建单元测试
-    - 演示 9（模块 4 中的演示 2）：使用 GitHub Copilot 针对特定条件创建单元测试
-    - 演示 10（模块 5 中的演示 1）：使用 GitHub Copilot 对话助手提高代码质量
-    - 演示 11（模块 5 中的演示 2）：使用 GitHub Copilot 对话助手提高代码可靠性和性能
-    - 演示 12（模块 5 中的演示 3）：使用 GitHub Copilot 对话助手提高代码安全性
+    - Demo 1 (Demo 1 in Module 1): Configure GitHub Copilot extensions for Visual Studio Code
+    - Demo 2 (Demo 1 in Module 2): Generate code explanations using GitHub Copilot Chat
+    - Demo 3 (Demo 2 in Module 2): Generate project documentation by using GitHub Copilot Chat
+    - Demo 4 (Demo 3 in Module 2): Generate inline code documentation by using GitHub Copilot Chat
+    - Demo 5 (Demo 1 in Module 3): Create code by using code line completions
+    - Demo 6 (Demo 2 in Module 3): Create code by using GitHub Copilot Inline Chat
+    - Demo 7 (Demo 3 in Module 3): Develop code features using GitHub Copilot tools
+    - Demo 8 (Demo 1 in Module 4): Create unit tests by using GitHub Copilot Chat
+    - Demo 9 (Demo 2 in Module 4): Create unit tests for specific conditions by using GitHub Copilot
+    - Demo 10 (Demo 1 in Module 5): Improve code quality by using GitHub Copilot Chat
+    - Demo 11 (Demo 2 in Module 5): Improve code reliability and performance by using GitHub Copilot Chat
+    - Demo 12 (Demo 3 in Module 5): Improve code security by using GitHub Copilot Chat
 
-    注意:演示 1 不使用预先准备好的代码示例。
+    NOTE: Demo 1 does not use a prepared code sample.

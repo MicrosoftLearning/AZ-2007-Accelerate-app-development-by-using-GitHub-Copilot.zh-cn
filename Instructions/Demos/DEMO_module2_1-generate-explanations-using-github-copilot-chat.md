@@ -1,49 +1,49 @@
 ---
 demo:
-  title: 演示：使用 GitHub Copilot 对话助手生成代码说明
-  module: 'Module 2: Generate documentation using GitHub Copilot tools'
+    title: 'Demo: Generate code explanations using GitHub Copilot Chat'
+    module: 'Module 2: Generate documentation using GitHub Copilot tools'
 ---
 
-# 演示：使用 GitHub Copilot 对话助手生成代码说明
+# Demo: Generate code explanations using GitHub Copilot Chat
 
-## 说明
+## Instructions
 
-这些演示活动专为包含以下资源的环境而设计：
+The demo activities are designed for an environment that includes the following resources:
 
-- Visual Studio Code。
-- 适用于 Visual Studio Code 的 C# 开发工具包扩展。
-- 适用于 Visual Studio Code 的 GitHub Copilot 和 GitHub Copilot Chat 扩展。 需要具有 GitHub Copilot 活动订阅的 GitHub 帐户。
-- 使用 C# 创建的示例代码项目。
+- Visual Studio Code.
+- The C# Dev Kit extension for Visual Studio Code.
+- The GitHub Copilot and GitHub Copilot Chat extensions for Visual Studio Code. A GitHub account with an active subscription for GitHub Copilot is required.
+- Sample code projects created using C#.
 
-注意****：我们建议讲师在演示过程中使用自己的 GitHub 帐户和 GitHub Copilot 订阅。 这样可以更好地控制和自定义开发环境。 此外，还可以更轻松地根据课堂需求调整演示内容。
+**NOTE**: We recommend that instructors consider using their own GitHub account and GitHub Copilot subscription for the demos. This will enable you to control and customize your dev environment. It will also make it easier to adjust the demos to fit the needs of your classrooms.
 
-**重要说明**：如果选择在托管实验室环境中运行演示，而不是在讲师电脑上进行演示，则可以在托管环境中解压缩示例应用。 在运行演示之前，需要在托管环境中配置 GitHub Copilot 扩展。 你可能会发现托管环境的运行速度较本地环境慢一些，因此在演示过程中可能需要相应地调整节奏。
+**IMPORTANT**: If you choose to run the demos in the hosted lab environment rather than your instructor PC, you can unzip the sample apps in the hosted environment. You will need to configure the GitHub Copilot extensions in the hosted environment before you can run the demos. You may find that the hosted environment is slower than your local environment, so you may need to adjust the pace of the demos accordingly.
 
-### 演示简介
+### Introduce the demo
 
-GitHub Copilot Chat 使用对话式 AI 协助和智能命令来帮助完成与编码相关的任务。 例如解释不熟悉和复杂的代码。
+GitHub Copilot Chat uses conversational AI assistance and smart commands to help you with coding-related tasks. One example is the ability to explain unfamiliar and complex code.
 
-可以出于多种原因使用 GitHub Copilot Chat 生成说明。 例如：
+You can use GitHub Copilot Chat to generate explanations for a number of reasons. For example:
 
-- 加入现有项目时，GitHub Copilot Chat 可以解释整个工作区或特定项目文件。
-- 当代码复杂或难以理解时，GitHub Copilot Chat 可以解释特定的代码行或部分。
-- GitHub Copilot Chat 可以解释代码中的错误，并建议修复错误的方法。
-- GitHub Copilot Chat 可以解释如何向项目添加功能，并提供演示如何实现新代码的代码片段。
+- GitHub Copilot Chat can explain an entire workspace or specific project files when you join an existing project.
+- GitHub Copilot Chat can explain specific code lines or sections when code is complex or difficult to understand.
+- GitHub Copilot Chat can explain errors in your code and suggest ways to fix them.
+- GitHub Copilot Chat can explain how to add features to your project and provide code snippets that demonstrate how to implement the new code.
 
-### 工作区和项目文件说明
+### Workspace and project file explanations
 
-GitHub Copilot Chat 可以帮助你了解新项目或特定项目文件。 可以在“聊天”视图或“快速聊天”窗口中使用 `@workspace`、`/explain` 和 `#file` 组合来生成项目或特定项目文件的说明。
+GitHub Copilot Chat can help you understand new projects or specific project files. You can use a combination `@workspace`, `/explain`, and `#file` in the Chat view or a Quick Chat window to generate an explanation of your project or specific project files.
 
-请使用以下步骤完成本演示的这一部分：
+Use the following steps to complete this section of the demo:
 
-1. 在 Visual Studio Code 中打开 APL2007M2Sample1 文件夹****。
+1. Open the **APL2007M2Sample1** folder in Visual Studio Code.
 
-    1. 在电脑上打开 Visual Studio Code。
-    1. 在 Visual Studio Code 中的“文件”菜单上，选择“打开文件夹” 。
-    1. 导航到 Windows 桌面文件夹，打开 SampleApps 文件夹，找到 APL2007M2Sample1 文件夹********。
-    1. 选择 APL2007M2Sample1，然后选择“选择文件夹”********。
+    1. Open Visual Studio Code on your PC.
+    1. In Visual Studio Code, on the **File** menu, select **Open Folder**.
+    1. Navigate to the Windows Desktop folder, open the **SampleApps** folder, and locate the **APL2007M2Sample1** folder.
+    1. Select **APL2007M2Sample1** and then select **Select Folder**.
 
-    Visual Studio Code EXPLORER 视图应显示包含以下文件的 APL2007M2Sample1 代码项目：
+    The Visual Studio Code EXPLORER view should show a APL2007M2Sample1 code project containing the following files:
 
     - APL2007M2Sample1.csproj
     - APL2007M2Sample1.sln
@@ -52,55 +52,55 @@ GitHub Copilot Chat 可以帮助你了解新项目或特定项目文件。 可�
     - MainWindow.xaml
     - MainWindow.xaml.cs
 
-1. 在 Visual Studio Code 的顶部菜单栏上，选择“打开聊天”****。
+1. On Visual Studio Code's top menu bar, select **Open Chat**.
 
-    “打开聊天”按钮位于 Visual Studio Code 窗口顶部的菜单栏上，就在搜索框的右侧。 它将显示一个小的 GitHub Copilot 徽标。
+    The Open Chat button is located on the menu bar at the top of the Visual Studio Code window, just to the right of the Searchbox. It displays a small GitHub Copilot logo.
 
-1. 使用以下命令让 Copilot Chat 解释 `APL2007M2Sample1` 项目：
+1. Use the following command to ask Copilot Chat to explain the `APL2007M2Sample1` project:
 
     ```plaintext
     @workspace Explain this project
     ```
 
-1. 花点时间查看“聊天”视图中的回复。
+1. Take a minute to review the response in the Chat view.
 
-    GitHub Copilot Chat 生成与以下回复类似的 APL2007M2Sample1 项目说明：
+    GitHub Copilot Chat generates an explanation of the APL2007M2Sample1 project that's similar to the following response:
 
     > [!IMPORTANT]
-    > GitHub Copilot Chat 使用 AI 模型生成响应。 收到的响应类似于本培训中显示的响应，但它们并不相同。
+    > GitHub Copilot Chat uses an AI model to generate responses. The responses you receive are similar to the responses shown in this training, but they aren't identical.
 
-1. 在“聊天”视图底部，请注意 GitHub Copilot Chat 已建议后续问题。
+1. At the bottom of the Chat view, notice that GitHub Copilot Chat has suggested a follow-up question.
 
-    收到的响应可能包括其他后续问题。
+    The response you receive may include a different follow-up question.
 
-    GitHub Copilot Chat 将生成聊天对话的历史记录。 该历史记录可帮助 GitHub Copilot Chat 了解你感兴趣的方面。 生成聊天历史记录时，AI 模型会从互动中学习，并提供更多相关的后续问题。 不建议探索“随机”后续问题。
+    GitHub Copilot Chat builds a history of your chat conversation. The history helps GitHub Copilot Chat understand your interests. As you build a chat history, the AI model learns from your interactions and provides more relevant follow-up questions. Exploring "random" follow-up questions isn't recommended.
 
-1. 在编辑器中打开 `MainWindow.xaml.cs` 文件。
+1. Open the `MainWindow.xaml.cs` file in the editor.
 
-1. 使用以下命令让 Copilot 解释 `MainWindow.xaml.cs` 文件：
+1. Use the following command to ask Copilot to explain the `MainWindow.xaml.cs` file:
 
     ```plaintext
     @workspace /explain #file:MainWindow.xaml.cs
     ```
 
-1. 花点时间查看“聊天”视图中的回复。
+1. Take a minute to review the response in the Chat view.
 
-    请注意，GitHub Copilot Chat 会生成 `MainWindow.xaml.cs` 文件的详细说明。 该说明包含有关文件用途、结构和关键组成部分的信息。 你可能还会看到一个描述潜在问题和改进的部分。
+    Notice that GitHub Copilot Chat generates a detailed explanation of the `MainWindow.xaml.cs` file. The explanation includes information about the file's purpose, structure, and key components. You may also see a section that describes potential issues and improvements.
 
-    GitHub Copilot Chat 再次建议后续问题。
+    Once again, GitHub Copilot Chat suggests a follow-up question.
 
     > [!IMPORTANT]
-    > GitHub Copilot Chat 会维护聊天对话的历史记录。 当你继续提问时，它会相应地优化其回复。 问题上下文（特别是在代码项目方面）会影响 GitHub Copilot Chat 的后续回复。 这有助于提供更准确且相关性更高的回复。 这也意味着你收到的特定问题的回复可能会因对话历史记录而有所不同。
+    > GitHub Copilot Chat maintains a history of your chat conversation. As you continue to ask questions, it refines its responses accordingly. The context of your questions, especially in regard to your code project, influences GitHub Copilot Chat's subsequent responses. This helps it to provide more accurate and relevant responses. It also means the response you receive for a particular question is likely to vary based on your conversation history.
 
-### 所选代码说明
+### Selected code explanations
 
-即使是经验丰富的开发人员也遇到难以理解的代码。 你可以让 GitHub Copilot Chat 提供说明，而不是花时间尝试理解复杂的代码。 “聊天”视图、内联聊天和智能操作都可用于生成所选代码行或节的说明。
+Even experienced developers encounter code that's difficult to understand. Rather than spending time trying to decipher complex code, you can ask GitHub Copilot Chat to provide an explanation. Chat view, inline chat, and smart actions can each be used to generate explanations for selected code lines or sections.
 
-在演示的这一部分，需要使用“解释”智能操作生成所选代码行的说明****。
+In this section of the demo, you use the **Explain** smart action to generate an explanation of selected code lines.
 
-1. 确保已在编辑器中打开 `MainWindow.xaml.cs` 文件。
+1. Ensure that you have the `MainWindow.xaml.cs` file open in the editor.
 
-1. 向下滚动，找到 `SumPageSizesAsync()` 方法。
+1. Scroll down to locate the `SumPageSizesAsync()` method.
 
     ```csharp
 
@@ -124,9 +124,9 @@ GitHub Copilot Chat 可以帮助你了解新项目或特定项目文件。 可�
 
     ```
 
-1. 选择以下代码行，然后使用“解释”智能操作生成说明****。
+1. Select the following code lines, and then use the **Explain** smart action to generate an explanation.
 
-    若要选择“解释”智能操作，请右键单击所选代码行，选择“Copilot”，然后从上下文菜单中选择“解释”************。
+    To select the **Explain** smart action, right-click the selected code lines, select **Copilot**, and then select **Explain** from the context menu.
 
     ```csharp
 
@@ -137,88 +137,88 @@ GitHub Copilot Chat 可以帮助你了解新项目或特定项目文件。 可�
 
     ```
 
-1. 花点时间查看“聊天”视图中的回复。
+1. Take a minute to review the response in the Chat view.
 
-1. 请注意说明中包含的详细信息级别。
+1. Notice the level of detail included in the explanation.
 
-    GitHub Copilot Chat 生成详细说明，其中包含有关所选代码行、用途及其运行方式的信息。 响应包括代码片段和自然语言说明，可帮助你理解代码。
+    GitHub Copilot Chat generates detailed explanations that include information about the selected code lines, their purpose, and how they work. Responses include code snippets and natural language descriptions that help you understand the code.
 
-### 错误说明
+### Error explanations
 
-管理错误是软件开发的一个重要方面。 某些错误易于发现和修复，而另一些错误可能更具挑战性。 在代码中遇到难以理解的错误时，可以让 GitHub Copilot Chat 提供说明。 例如，可以让 GitHub Copilot Chat 解释为什么特定代码行导致错误。
+Managing errors is an essential aspect of software development. Some errors are easy to spot and fix, while others can be more challenging. When you encounter an error in your code that's difficult to understand, you can ask GitHub Copilot Chat to provide an explanation. For example, you can ask GitHub Copilot Chat to explain why a specific line of code is causing an error.
 
-请使用以下步骤完成本演示的这一部分：
+Use the following steps to complete this section of the demo:
 
-1. 确保已在编辑器中打开 `MainWindow.xaml.cs`。
+1. Ensure that you have `MainWindow.xaml.cs` open in the editor.
 
-1. 在 `SumPageSizesAsync()` 方法中，找到以下代码行：
+1. In the `SumPageSizesAsync()` method, locate the following code line:
 
     ```csharp
     int[] lengths = Task.WhenAll(downloadTasks);
     ```
 
-1. 将鼠标光标悬停在 `downloadTasks` 上以显示错误消息。
+1. Hover the mouse cursor over `downloadTasks` to display the error message.
 
-    错误消息不一定会说明如何解决编码问题。 当没有明显的解决方案时，可以要求 GitHub Copilot Chat 解释错误并提供解决方法方面的建议。
+    Error messages don't always explain how to fix coding issues. When the solution isn't obvious, you can ask GitHub Copilot Chat to explain an error and suggest ways to fix it.
 
-1. 选择包含错误的代码行，然后按 Ctrl+I**** 打开内联聊天。
+1. Select the code line containing the error, and then press **Ctrl+I** to open an inline chat.
 
-1. 若要生成错误说明，请输入以下提示：
+1. To generate an explanation for the error, enter the following prompt:
 
     ```plaintext
     /explain why is the selection causing an error
     ```
 
-1. 花点时间查看“聊天”视图中的回复。
+1. Take a minute to review the response in the Chat view.
 
-    请注意，回复包含有关错误的信息以及修复错误的建议。 在本例中，GitHub Copilot Chat 解释称 `Task.WhenAll(downloadTasks)` 行导致了错误，因为它缺少 `await` 关键字。 回复还提供了一个代码片段，演示如何通过在 `Task.WhenAll(downloadTasks)` 行之前添加 `await` 关键字来修复错误。
+    Notice that the response includes information about the error and suggestions for fixing it. In this case, GitHub Copilot Chat explains that the `Task.WhenAll(downloadTasks)` line is causing an error because it's missing the `await` keyword. The response also provides a code snippet that shows how to fix the error by adding the `await` keyword before the `Task.WhenAll(downloadTasks)` line.
 
-1. 根据 GitHub Copilot Chat 提供的说明修复代码中的错误。
+1. Use the explanation provided by GitHub Copilot Chat to fix the error in your code.
 
-    在 `Task.WhenAll(downloadTasks)` 行之前添加 `await` 关键字，如以下代码片段所示：
+    Add the `await` keyword before the `Task.WhenAll(downloadTasks)` line, as shown in the following code snippet:
 
     ```csharp
     int[] lengths = await Task.WhenAll(downloadTasks);
     ```
 
-    进行此更改后，应可以解决该错误。
+    After you make this change, the error should be resolved.
 
-### 新功能或功能说明
+### New feature or functionality explanations
 
-GitHub Copilot Chat 可以解释如何向项目添加新特性或功能。
+GitHub Copilot Chat can explain how to add new features or functionality to your project.
 
-以 APL2007M2Sample1 项目为例。 代码下载网页并计算已下载页面的总大小。 假设需要向应用程序添加异常处理。 在演示的这一部分，你将使用 GitHub Copilot 对话助手来说明如何在下载过程中管理异常。
+Consider the APL2007M2Sample1 project. Your code downloads web pages and calculates the total size of the downloaded pages. Suppose you need to add exception handling to the application. In this section of the demo, you use GitHub Copilot Chat to explain how to manage exceptions during the download process.
 
-请使用以下步骤完成本演示的这一部分：
+Use the following steps to complete this section of the demo:
 
-1. 选择包含 `SumPageSizesAsync` 和 `ProcessUrlAsync` 方法的代码行。
+1. Select the code lines that include the `SumPageSizesAsync` and `ProcessUrlAsync` methods.
 
-1. 在“聊天”视图中，若要让 GitHub Copilot Chat 解释如何处理下载过程中引发的异常，请输入以下问题：
+1. In the Chat view, to have GitHub Copilot Chat explain how to handle exceptions thrown during the download process, enter the following question:
 
     ```plaintext
     @workspace /explain #MainWindow.xaml.cs How can I handle exceptions thrown during the download process?
     ```
 
-1. 花点时间查看“聊天”视图中的回复。
+1. Take a minute to review the response in the Chat view.
 
-    Copilot Chat 生成类似于以下说明的回复：
+    Copilot Chat generates a response that's similar to the following explanation:
 
-    回复提供了有关如何处理下载过程中引发的异常的详细说明。 还可以获取实现建议的异常处理代码的代码片段。 可以复制代码片段，或将其插入代码项目中的光标位置。
+    The response provides a detailed explanation of how to handle exceptions thrown during the download process. You also get a code snippet that implements the suggested exception handling code. You can copy the code snippet or insert it into your code project at the location of the cursor.
 
-    下一步不是从“聊天”视图复制或插入代码片段，而是研究使用内联聊天来实现建议的异常处理代码。
+    Rather than copying or inserting the code snippet from the Chat view, the next step investigates using the inline chat to implement the suggested exception handling code.
 
-1. 若要询问内联聊天如何实现异常处理，请选择 `ProcessUrlAsync` 方法，按 Ctrl+I****，然后输入以下提示：
+1. To ask inline chat how to implement exception handling, select the `ProcessUrlAsync` method, press **Ctrl+I**, and then enter the following prompt:
 
     ```plaintext
     How can I handle exceptions thrown during the download process?
     ```
 
-1. 花点时间查看内联回复。
+1. Take a minute to review the inline response.
 
-1. 若要接受建议的错误处理代码，请选择“接受”****。
+1. To accept the proposed error handling code, select **Accept**.
 
-    请注意，已实现建议的 `try-catch` 块。
+    Notice that the proposed `try-catch` block is implemented.
 
-### 总结
+### Summary
 
-在本演示中，你已使用 GitHub Copilot 对话助手生成关于代码行、错误和新功能的说明。 GitHub Copilot Chat 提供了一组强大的功能，可帮助你快速启动新项目。 通过使用内联聊天和“聊天”视图，你可以在不离开 Visual Studio Code 环境的情况下从 GitHub Copilot Chat 获取帮助。 GitHub Copilot Chat 的 AI 模型可生成准确且有用的回复，帮助你成为更迅速、更高效的开发人员。
+In this demo, you used GitHub Copilot Chat to generate explanations for code lines, errors, and new features. GitHub Copilot Chat provides a powerful set of features that can help you ramp up on new project quickly. By using the inline chat and Chat view, you can get help from GitHub Copilot Chat without leaving the Visual Studio Code environment. GitHub Copilot Chat's AI model generates accurate and useful responses that can help you become a more efficient and effective developer.
