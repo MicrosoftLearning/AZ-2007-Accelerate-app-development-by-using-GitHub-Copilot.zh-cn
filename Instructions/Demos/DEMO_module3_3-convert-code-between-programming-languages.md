@@ -1,133 +1,133 @@
 ---
 demo:
-    title: 'Demo: Convert code from one programming language to another'
-    module: 'Module 3: Develop code features using GitHub Copilot tools'
+  title: 演示：将代码从一种编程语言转换为另一种编程语言
+  module: 'Module 3: Develop code features using GitHub Copilot tools'
 ---
 
-# Demo: Convert code from one programming language to another
+# 演示：将代码从一种编程语言转换为另一种编程语言
 
-## Instructions
+## 说明
 
-The demo activities are designed for an environment that includes the following resources:
+这些演示活动专为包含以下资源的环境而设计：
 
-- Visual Studio Code.
-- The C# Dev Kit extension for Visual Studio Code.
-- The GitHub Copilot and GitHub Copilot Chat extensions for Visual Studio Code. A GitHub account with an active subscription for GitHub Copilot is required.
-- Sample code projects created using C#.
+- Visual Studio Code。
+- 适用于 Visual Studio Code 的 C# 开发工具包扩展。
+- 适用于 Visual Studio Code 的 GitHub Copilot 和 GitHub Copilot Chat 扩展。 需要具有 GitHub Copilot 活动订阅的 GitHub 帐户。
+- 使用 C# 创建的示例代码项目。
 
-**NOTE**: We recommend that instructors consider using their own GitHub account and GitHub Copilot subscription for the demos. This will enable you to control and customize your dev environment. It will also make it easier to adjust the demos to fit the needs of your classrooms.
+注意****：我们建议讲师在演示过程中使用自己的 GitHub 帐户和 GitHub Copilot 订阅。 这样可以更好地控制和自定义开发环境。 此外，还可以更轻松地根据课堂需求调整演示内容。
 
-**IMPORTANT**: If you choose to run the demos in the hosted lab environment rather than your instructor PC, you can unzip the sample apps in the hosted environment. You will need to configure the GitHub Copilot extensions in the hosted environment before you can run the demos. You may find that the hosted environment is slower than your local environment, so you may need to adjust the pace of the demos accordingly.
+**重要说明**：如果选择在托管实验室环境中运行演示，而不是在讲师电脑上进行演示，则可以在托管环境中解压缩示例应用。 在运行演示之前，需要在托管环境中配置 GitHub Copilot 扩展。 你可能会发现托管环境的运行速度较本地环境慢一些，因此在演示过程中可能需要相应地调整节奏。
 
-### Introduce the demo
+### 演示简介
 
-GitHub Copilot can help you to convert code from one programming language to another. For example, you can ask GitHub Copilot to convert a function or code snippet to another programming language.
+GitHub Copilot 可以帮助你将代码从一种编程语言转换为另一种编程语言。 例如，可以要求 GitHub Copilot 将函数或代码片段转换为另一种编程语言。
 
-You can complete the following types of code conversions by using GitHub Copilot:
+可以使用 GitHub Copilot 完成以下类型的代码转换：
 
-- Convert an entire code file to another programming language.
-- Convert a function to another programming language.
-- Convert a code snippet to another programming language.
+- 将整个代码文件转换为另一种编程语言。
+- 将函数转换为另一种编程语言。
+- 将代码片段转换为另一种编程语言。
 
-Each of the chat interfaces (Chat view, Quick Chat window, and inline chat) can be used to convert code between programming languages. Your choice of chat interface depends on your preference and the complexity of the code that you want to convert.
+每个聊天界面（聊天视图、快速聊天窗口和内联聊天）都可用于在编程语言之间转换代码。 选择聊天界面取决于偏好和要转换的代码的复杂性。
 
-Suppose you're just getting started on the `QuarterlyIncomeReport` project. You discuss the project goals with a colleague. They mention that they have a Python file that could provide some of the features that you're looking for. They point you the repository for the Python code. You decide to open the Python code project in Visual Studio Code and use the Chat view to convert the Python code to C#.
+假设你刚刚开始 `QuarterlyIncomeReport` 项目。 你与同事讨论项目目标。 他们提到，他们有一个 Python 文件，它可以提供你要查找的一些功能。 它们指向 Python 代码的存储库。 你决定在 Visual Studio Code 中打开 Python 代码项目，并使用聊天视图将 Python 代码转换为 C#。
 
-## Convert code between programming languages by using the Chat view
+## 使用聊天视图在编程语言之间转换代码
 
-1. Open the **APL2007M3Python** project folder in Visual Studio Code.
+1. 在 Visual Studio Code 中打开“APL2007M3Python”项目文件夹。****
 
-    This project contains a Python version of the `QuarterlyIncomeReport` project that you've worked on during this module. You can have GitHub Copilot explain the code to you using the Chat view or Explain This smart action.
+    此项目包含在本模块中处理的 `QuarterlyIncomeReport` 项目的 Python 版本。 你可以让 GitHub Copilot 使用聊天视图向你解释代码，或者解释此智能操作。
 
-1. Run the Python application.
+1. 运行 Python 应用程序。
 
-    Notice that the output from the Python application is essentially the same as the output from the C# application that you created earlier.
+    请注意，Python 应用程序的输出实质上与前面创建的 C# 应用程序的输出相同。
 
-1. Open the `main.py` Python file.
+1. 打开 `main.py` Python 文件。
 
-    The Python file contains a function that generates sales data. You want to convert this Python code to C#.
+    Python 文件包含生成销售数据的函数。 你想要将此 Python 代码转换为 C#。
 
-1. Select the entire file contents.
+1. 选择整个文件内容。
 
-1. Open the Chat view and then enter the following prompt:
+1. 打开“聊天”视图，然后输入以下提示：
 
     ```plaintext
     Convert #selection to C#
     ```
 
-1. Take a moment to review the response from GitHub Copilot.
+1. 花点时间查看 GitHub Copilot 的响应。
 
-    The response should contain the C# version of the Python code that you selected.
+    响应应包含所选 Python 代码的 C# 版本。
 
-1. Open a second instance of Visual Studio Code.
+1. 打开 Visual Studio Code 的第二个实例。
 
-1. Open the Chat view, enter the following prompt:
+1. 打开“聊天”视图，输入以下提示：
 
     ```plaintext
     @workspace /new console application in C# NET8 named APL2007M3B. Only .cs and .csproj files. Enable ImplicitUsings and Nullable
     ```
 
-    If Copilot responds with an error message about the "path argument", try the same prompt again.
+    如果 Copilot 使用有关“path 参数”的错误消息进行响应，请再次尝试相同的提示。
 
-1. Select **Create Workspace**
+1. 选择“创建工作区”****
 
-1. In the Open Folder dialog, select the **Desktop** folder and then select **Select as Parent Folder**.
+1. 在“打开文件夹”对话框中，选择“桌面”**** 文件夹，然后选择“选择为父文件夹”****。
 
-    wait for the workspace to be created.
+    等待工作区创建完毕。
 
-1. When the workspace is created, select **Program.cs**, and delete the file contents.
+1. 创建工作区后，选择 **Program.cs** 并删除文件内容。
 
-1. Switch to the instance of Visual Studio Code that contains the Python code.
+1. 切换到包含 Python 代码的 Visual Studio Code 实例。
 
-1. Scroll to the top of the Chat view and click the **Copy** button to copy the generated C# code to the clipboard.
+1. 滚动到“聊天”视图顶部，然后单击“复制****”按钮，将生成的 C# 代码复制到剪贴板。
 
-1. Switch to the instance of Visual Studio Code that contains the C# code.
+1. 切换到包含 C# 代码的 Visual Studio Code 实例。
 
-1. Paste the C# code into the Program.cs file.
+1. 将 C# 代码粘贴到 Program.cs 文件中。
 
-1. Save the Program.cs file.
+1. 保存 Program.cs 文件。
 
-1. Run the C# application.
+1. 运行 C# 应用程序。
 
-    Notice that the output from the C# application is essentially the same as the output from the Python application.
+    请注意，C# 应用程序的输出实质上与 Python 应用程序的输出相同。
 
-    If you have time, take a few minutes to review the differences between the converted C# code and the C# code from the previous unit.
+    如果有时间，请花几分钟时间查看转换后的 C# 代码与上一单元中的 C# 代码之间的差异。
 
-## Convert code between programming languages by using the inline chat
+## 使用内联聊天在编程语言之间转换代码
 
-1. Switch back to the Visual Studio Code instance containing the Python project that you opened earlier.
+1. 切换回包含前面打开的 Python 项目的 Visual Studio Code 实例。
 
-1. Select the code in the main.py file.
+1. 选择 main.py 文件中的代码。
 
-1. Open the inline chat and enter the following prompt:
+1. 打开内联聊天并输入以下提示：
 
     ```plaintext
     Convert #selection to C#
     ```
 
-1. Review the response from GitHub Copilot and then select **Accept**.
+1. 查看 GitHub Copilot 的响应，然后选择“接受”****。
 
-    The Python file should now contain C# code.
+    Python 文件现在应包含 C# 代码。
 
-1. Copy the generated C# code to the clipboard.
+1. 将生成的 C# 代码复制到剪贴板。
 
-1. Close the main.py file without saving the changes.
+1. 关闭 main.py 文件而不保存更改。
 
-1. Switch to the Visual Studio Code instance that contains the C# project and open the Program.cs file.
+1. 切换到包含 C# 项目的 Visual Studio Code 实例并打开 Program.cs 文件。
 
-1. To overwrite the existing C# code, paste the C# code from the clipboard (converted from Python using inline chat) over the contents of the Program.cs file.
+1. 若要覆盖现有的 C# 代码，请将剪贴板中的 C# 代码（使用内联聊天从 Python 转换）粘贴到 Program.cs 文件的内容上。
 
-1. Save the Program.cs file.
+1. 保存 Program.cs 文件。
 
-1. Run the C# application.
+1. 运行 C# 应用程序。
 
-    Notice that the output from the C# application is essentially the same as the output from the Python application.
+    请注意，C# 应用程序的输出实质上与 Python 应用程序的输出相同。
 
-When you use GitHub Copilot to convert code between programming languages, try using both the Chat view and the inline chat. Although both tools share the same AI model, their results may differ. Trying both tools can help you to determine which tool is best for your specific use case.
+使用 GitHub Copilot 在编程语言之间转换代码时，请尝试使用“聊天”视图和内联聊天。 尽管这两个工具共享相同的 AI 模型，但它们的结果可能有所不同。 尝试这两种工具可以帮助你确定哪种工具最适合你的特定用例。
 
 > [!NOTE]
-> Programming languages often have an associated "programming style", and some languages may have unique features or code libraries. When you’re converting large sections of code from one programming language to another, it’s important to fully understand the target programming language and the intension of the code. GitHub Copilot suggestions should always be reviewed before accepting.
+> 编程语言通常具有相关的“编程风格”，并且某些语言可能具有独特的功能或代码库。 将大量代码从一种编程语言转换为另一种编程语言时，必须充分了解目标编程语言以及代码的意图。 在接受之前，必须仔细检查 GitHub Copilot 建议。
 
-### Summary
+### 总结
 
-In this demo, you used GitHub Copilot to convert Python code to C#. You used the Chat view and the inline chat to convert the Python code to C#. You then ran the C# application to verify that the output was the same as the output from the Python application. By using GitHub Copilot to convert code between programming languages, you can quickly adapt code from one language to another. Remember to review the converted code to ensure that it meets your requirements and that it follows the programming style of the target language.
+在本演示中，你已使用 GitHub Copilot 将 Python 代码转换为 C#。 你已使用“聊天”视图和内联聊天将 Python 代码转换为 C#。 然后运行了 C# 应用程序，验证输出是否与 Python 应用程序的输出相同。 通过使用 GitHub Copilot 在各种编程语言之间转换代码，可以快速将代码从一种语言适配到另一种语言。 请记得在转换后审查代码，确保它满足你的要求，并符合目标语言的编程风格。

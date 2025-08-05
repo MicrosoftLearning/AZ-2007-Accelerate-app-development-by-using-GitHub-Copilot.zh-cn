@@ -1,99 +1,99 @@
 ---
 demo:
-    title: 'Demo: Create code by using GitHub Copilot Inline Chat'
-    module: 'Module 3: Develop code features using GitHub Copilot tools'
+  title: 演示：使用 GitHub Copilot 内联聊天创建代码
+  module: 'Module 3: Develop code features using GitHub Copilot tools'
 ---
 
-# Demo: Create code by using GitHub Copilot Inline Chat
+# 演示：使用 GitHub Copilot 内联聊天创建代码
 
-## Instructions
+## 说明
 
-The demo activities are designed for an environment that includes the following resources:
+这些演示活动专为包含以下资源的环境而设计：
 
-- Visual Studio Code.
-- The C# Dev Kit extension for Visual Studio Code.
-- The GitHub Copilot and GitHub Copilot Chat extensions for Visual Studio Code. A GitHub account with an active subscription for GitHub Copilot is required.
-- Sample code projects created using C#.
+- Visual Studio Code。
+- 适用于 Visual Studio Code 的 C# 开发工具包扩展。
+- 适用于 Visual Studio Code 的 GitHub Copilot 和 GitHub Copilot Chat 扩展。 需要具有 GitHub Copilot 活动订阅的 GitHub 帐户。
+- 使用 C# 创建的示例代码项目。
 
-**NOTE**: We recommend that instructors consider using their own GitHub account and GitHub Copilot subscription for the demos. This will enable you to control and customize your dev environment. It will also make it easier to adjust the demos to fit the needs of your classrooms.
+注意****：我们建议讲师在演示过程中使用自己的 GitHub 帐户和 GitHub Copilot 订阅。 这样可以更好地控制和自定义开发环境。 此外，还可以更轻松地根据课堂需求调整演示内容。
 
-**IMPORTANT**: If you choose to run the demos in the hosted lab environment rather than your instructor PC, you can unzip the sample apps in the hosted environment. You will need to configure the GitHub Copilot extensions in the hosted environment before you can run the demos. You may find that the hosted environment is slower than your local environment, so you may need to adjust the pace of the demos accordingly.
+**重要说明**：如果选择在托管实验室环境中运行演示，而不是在讲师电脑上进行演示，则可以在托管环境中解压缩示例应用。 在运行演示之前，需要在托管环境中配置 GitHub Copilot 扩展。 你可能会发现托管环境的运行速度较本地环境慢一些，因此在演示过程中可能需要相应地调整节奏。
 
-### Introduce the demo
+### 演示简介
 
-The GitHub Copilot Chat extension for Visual Studio Code includes three chat interfaces:
+适用于 Visual Studio Code 的 GitHub Copilot 聊天扩展包括三个聊天界面：
 
-- The **Chat view** provides an AI assistant that's available to help you at any time.
-- A **Quick Chat** window can be used to ask a quick question and then get back into what you're doing.
-- The **inline chat** interface opens directly in the editor for contextual interactions while you're coding.
+- **“聊天”视图**提供可随时帮你忙的 AI 助手。
+- **快速聊天**窗口可用于提出快速问题，然后返回到正在执行的操作。
+- **内联聊天**界面可直接在编辑器中打开，以便在编码时进行上下文交互。
 
-The Chat view and Quick Chat window enable interactive multi-turn conversations with the AI. Both of these interfaces provide a way to ask questions, get help with a coding problem, and generate code. During a conversation, GitHub Copilot responses include natural language text, code blocks, and other elements. When code blocks are provided in a response, you can copy them or inject them directly into your code editor.
+“聊天”视图和“快速聊天”窗口通过 AI 启用交互式多轮次对话。 这两个接口都提供了一种方法来提问、获取有关编码问题的帮助以及生成代码。 在对话期间，GitHub Copilot 响应包括自然语言文本、代码块和其他元素。 响应中提供代码块时，可以复制代码块或将其直接注入到代码编辑器中。
 
-The inline chat interface is designed to provide contextual help and code suggestions while you're coding.
+内联聊天界面旨在提供编码时的上下文帮助和代码建议。
 
-In this demonstration, you use GitHub Copilot's inline chat feature to generate new code features. The demonstration is a continuation of the project scenario in the previous demonstration. Use the prepared sample app, `APL2007M3SalesReport-InlineChat`, to start the demo. During the demo you'll update the `SalesData` data structure and the `GenerateSalesData` method. You'll also update the `QuarterlySalesReport` method to include additional calculations and display options.
+在本演示中，你将使用 GitHub Copilot 的内联聊天功能生成新的代码功能。 本演示是对上一演示中项目方案的延续。 使用准备好的示例应用 `APL2007M3SalesReport-InlineChat` 开始演示。 在演示期间，你将更新 `SalesData` 数据结构和 `GenerateSalesData` 方法。 此外，还将更新 `QuarterlySalesReport` 方法以包含其他计算和显示选项。
 
-#### Review the coding tasks and project goals
+#### 查看编码任务和项目目标
 
-This demonstration focuses on using GitHub Copilot to accelerate the following tasks:
+本演示重点介绍如何使用 GitHub Copilot 加速以下任务：
 
-1. You will update the `SalesData` data structure and `GenerateSalesData` method to produce a data sample that resembles "actual" data.
+1. 你将更新 `SalesData` 数据结构和 `GenerateSalesData` 方法，以生成类似于“实际”数据的数据示例。
 
-    - dateSold: no changes are required.
-    - departmentName: The string values should be randomly selected from a list of 8 departments. For each department name, create a 4-character abbreviation that can be included in the productID.
-    - productID: change from `int` to `string` data type. The productID values should be formatted using the pattern "`DDDD-###-SS-CC-MMM`" where the components of the ID are defined as follows:
+    - dateSold：无需更改。
+    - departmentName：应从 8 个部门列表中随机选择字符串值。 对于每个部门名称，请创建一个可以包含在 productID 中的 4 个字符的缩写。
+    - productID：从 `int` 更改为 `string` 数据类型。 应使用模式“`DDDD-###-SS-CC-MMM`”设置 productID 值的格式，其中 ID 的组件定义如下：
 
-        - a 4-character code representing the department.
-        - a 3-digit number representing the product.
-        - a 2-character code representing the product size.
-        - a 2-character code representing the product color.
-        - a 3-character code representing the manufacturing site (randomly selected from a list of 10 manufacturing sites). The codes should be a 2-letter ISO country code followed by a digit (e.g., US1, CA2, MX3, etc.).
+        - 一个表示部门的 4 个字符的代码。
+        - 一个表示产品的 3 位数字。
+        - 一个表示产品大小的 2 个字符代码。
+        - 一个表示产品颜色的 2 个字符的代码。
+        - 一个表示制造站点的 3 个字符的代码（从 10 个制造站点列表中随机选择）。 代码应为 2 个字母的 ISO 国家/地区代码，后跟数字（例如 US1、CA2、MX3 等）。
 
-    - quantitySold: no changes are required.
-    - unitPrice: Raise the lower bound of the price range to 25 and the upper bound to 300.
-    - baseCost: Add a field for the manufacturing cost of the item. The baseCost values should be generated using randomly generated discount off the unitPrice (5 to 20 percent).
-    - volumeDiscount: Add a field for a volume discount percentage. The value assigned to volumeDiscount should be the integer component of 10 percent of the quantitySold (10% of 19 units = 1% volumeDiscount).
-    - Increase the number of records generated to 10,000.
+    - quantitySold：无需更改。
+    - unitPrice：将价格范围的下限提高到 25，上限提高到 300。
+    - baseCost：添加项目制造成本的字段。 应使用从 unitPrice 的随机生成的折扣（5% 到 20%）生成 baseCost 值。
+    - volumeDiscount：为批量折扣百分比添加字段。 分配给 volumeDiscount 的值应为 quantitySold 的 10% 的整数部分（10% 的 19 个单位 = 1% volumeDiscount）。
+    - 将生成的记录数增加到 10,000。
 
-1. You will update the `QuarterlySalesReport` method as follows:
+1. 你将更新 `QuarterlySalesReport` 方法，如下所示：
 
-    1. When displaying the sales results, list the results in a logical order. For example, when listing total sale by quarter, the quarters should be listed in order from Q1 to Q4.
-    1. Display currency values using regional settings.
-    1. Include calculations for quarterly profit and profit percentage
-    1. Include calculations for quarterly sales, profit, and profit percentage by department.
+    1. 显示销售结果时，按逻辑顺序列出结果。 例如，按季度列出总销售额时，应按第 1 季度到第 4 季度的顺序列出季度。
+    1. 使用区域设置显示货币值。
+    1. 包括季度利润和利润百分比的计算
+    1. 包括每个部门的季度销售额、利润和利润百分比的计算。
 
-#### Explain your approach to developing prompts for GitHub Copilot Chat
+#### 说明为 GitHub Copilot 对话助手开发提示的方法
 
-GitHub Copilot's inline chat feature uses the prompt you submit to understand the task or problem you're trying to solve. The prompts should be specific and concise. Good prompts produce better responses.
+GitHub Copilot 的内联聊天功能使用你提交的提示来了解你正尝试解决的任务或问题。 提示应具体且简洁。 好的提示会产生较好的响应。
 
-When you develop prompts for GitHub Copilot, consider the following best practices:
+为 GitHub Copilot 开发提示时，请考虑以下最佳做法：
 
-- Be specific and keep it simple: Provide clear and concise prompts that describe the task or problem you're trying to solve. Avoid using complex language or jargon that could confuse the AI.
-- Use natural language: Write prompts in a conversational tone. Use natural language that you would use when talking to a colleague or team member.
-- Break down complex tasks: If the task is complex, break it down into smaller steps. Provide prompts for each step to help GitHub Copilot generate the correct code.
-- Provide context: Include relevant information that helps GitHub Copilot understand the task or problem you're trying to solve. Include details about the data, variables, or code blocks that are relevant to the prompt.
-- Use chat participants, slash commands, and chat variables: GitHub Copilot's inline chat feature supports chat participants, slash commands, and chat variables. Use these features to interact with GitHub Copilot and provide additional context for your prompts.
+- 在具体化的同时保持简单：提供清晰且简洁的提示来描述你正尝试解决的任务或问题。 避免使用可能会使 AI 感到困惑的复杂语言或术语。
+- 使用自然语言：用对话的语气写提示。 使用与同事或团队成员交谈时会使用的自然语言。
+- 拆分复杂任务：如果任务很复杂，请将其拆分为较小的步骤。 为每个步骤提供提示，以帮助 GitHub Copilot 生成正确的代码。
+- 提供上下文：包含有助于 GitHub Copilot 了解你正尝试解决的任务或问题的相关信息。 包括与提示相关的数据、变量或代码块的详细信息。
+- 使用聊天参与者、斜杠命令和聊天变量：GitHub Copilot 的内联聊天功能支持聊天参与者、斜杠命令和聊天变量。 使用这些功能与 GitHub Copilot 交互并为提示提供额外的上下文。
 
-### Generate data structures using inline chat
+### 使用内联聊天生成数据结构
 
-Projects generally begin with the features or parameters that are either fixed or known. Selecting a data source or creating sample data is often a good place to start.
+项目通常从固定或已知的特征或参数开始。 通常从选择数据源或创建示例数据着手。
 
-In this section of the demo, you use data structures to help create simulated sales data. The data provides useful context for GitHub Copilot when you update the `QuarterlySalesReport` method.
+在演示的这一部分，你将使用数据结构来帮助创建模拟的销售数据。 更新 `QuarterlySalesReport` 方法时，数据为 GitHub Copilot 提供了有用的上下文。
 
 > [!NOTE]
-> In an actual business project, you'd probably use historical data rather generating simulated data. In this training, generating simulated data provides an opportunity to practice using the GitHub Copilot tools. Simulating data isn't suggested as a best practice for business projects.
+> 在实际的业务项目中，你可能使用历史数据来生成模拟数据。 在此训练中，生成模拟数据提供了使用 GitHub Copilot 工具练习的机会。 不建议将进行数据模拟作为业务项目的最佳做法。
 
-Your project goals indicate that you need to work on the following data structures:
+项目目标指示需要处理以下数据结构：
 
-- You need a list of 8 department names. Each department name should be abbreviated using a 4-character string. Pick an industry for your fictional company such as Clothing or Sports Equipment, and then have GitHub Copilot generate a dictionary of department names and 4-char codes.
-- You need a list of 10 manufacturing sites. Each site should be represented by a 3-character code. The codes can be a 2-letter ISO country code followed by a digit (e.g., US1, CA2, MX3, etc.). Have GitHub Copilot generate a dictionary of 10 manufacturing sites using 3-4 country codes.
-- You need to update the `SalesData` data structure. You need to include the new fields for: department code, manufacturing site code. You also need to change the data type for productID from `int` to `string`.
+- 需要 8 个部门名称的列表。 应使用 4 个字符的字符串缩写每个部门名称。 为虚构公司（如服装或体育设备）选择行业，然后让 GitHub Copilot 生成部门名称和 4 个字符代码的字典。
+- 需要 10 个制造站点的列表。 每个站点都应由 3 个字符的代码表示。 这些代码可以是 2 个字母的 ISO 国家/地区代码，后跟数字（例如 US1、CA2、MX3 等）。 让 GitHub Copilot 使用 3-4 国家/地区代码生成 10 个制造站点的字典。
+- 需要更新 `SalesData` 数据结构。 需要包括部门代码、制造站点代码的新字段。 还需要将 productID 的数据类型从 `int` 更改为 `string`。
 
-To create and update the data structure, complete the following steps:
+若要创建和更新数据结构，请完成以下步骤：
 
-1. Open the **APL2007M3SalesReport-InlineChat** project folder in Visual Studio Code.
+1. 在 Visual Studio Code 中打开 **APL2007M3SalesReport-InlineChat** 项目文件夹。
 
-1. Ensure that the application runs and produces a report that resembles the following output:
+1. 确保应用程序运行并生成类似于以下输出的报告：
 
     ```plaintext
     Quarterly Sales Report
@@ -104,27 +104,27 @@ To create and update the data structure, complete the following steps:
     Q1: $595963.0477790226
     ```
 
-    Since the data is randomly generated, the numeric values will vary with each run.
+    由于数据是随机生成的，因此每次运行时数值都会有所不同。
 
-1. Open the Program.cs file.
+1. 打开 Program.cs 文件。
 
-1. Position the cursor on a blank line below the `SalesData` data structure.
+1. 将光标置于 `SalesData` 数据结构下方的空白行上。
 
-1. To open the inline chat interface, press **Ctrl+I** on the keyboard.
+1. 若要打开内联聊天界面，请按键盘上的 Ctrl+I****。
 
-1. Enter the following prompt:
+1. 输入以下提示：
 
     ```output
     I need a public struct ProdDepartments that contains a static string array for 8 clothing industry departments. Create separate string array containing 4-character abbreviations for each department name. The abbreviation must be unique. The department names should represent real department names for the clothing industry.
     ```
 
-    If you had a specific list of field names, you could provide them in the prompt. For example, actual company data could be used to specify the department names.
+    如果你有特定的字段名称列表，则可以在提示中提供它们。 例如，实际公司数据可用于指定部门名称。
 
-1. Review the suggestions provided by GitHub Copilot.
+1. 查看 GitHub Copilot 提供的建议。
 
-    As long as the prompt is clear and specific, GitHub Copilot should provide a useful suggestion. If the suggestion isn't what you expected, you can reject it and try again. In this case, the names of the departments aren't important, so you can probably accept the suggestion.
+    只要提示明确且具体，GitHub Copilot 应提供有用的建议。 如果建议不是预期的，可以拒绝该建议，然后重试。 在这种情况下，部门的名称并不重要，因此你可以接受建议。
 
-    Your data structure should resemble the following code:
+    数据结构应类似于以下代码：
 
     ```csharp
 
@@ -136,25 +136,25 @@ To create and update the data structure, complete the following steps:
 
     ```
 
-1. To accept the suggestion, press the tab key or select **Accept**.
+1. 若要接受建议，请按 Tab 键或选择“接受”****。
 
-    You can also use the inline chat feature to document the new code. Select the code, press **Ctrl+I** to open inline chat, enter `/doc`, review the suggested inline documentation, and then accept the update.
+    还可以使用内联聊天功能来记录新代码。 选择代码，按 Ctrl+I**** 打开内联聊天，输入 `/doc`，查看建议的内联文档，然后接受更新。
 
-1. Position the cursor on a blank line below the `ProdDepartments` data structure.
+1. 将光标置于 `ProdDepartments` 数据结构下方的空白行上。
 
-1. To open the inline chat interface, press **Ctrl+I** on the keyboard.
+1. 若要打开内联聊天界面，请按键盘上的 Ctrl+I****。
 
-1. Enter the following prompt:
+1. 输入以下提示：
 
     ```output
     I need a public struct ManufacturingSites that contains a static string array for 10 manSites. Manufacturing sites should be represented by a 3-character code that includes a 2-letter ISO country code followed by a digit. Use 3 ISO country codes.
     ```
 
-    If you had a specific list of field names, you could provide them in the prompt. For example, actual company data could be used to specify the field names.
+    如果你有特定的字段名称列表，则可以在提示中提供它们。 例如，实际公司数据可用于指定字段名称。
 
-1. Review the suggestions provided by GitHub Copilot.
+1. 查看 GitHub Copilot 提供的建议。
 
-    Your data structures should resemble the following code:
+    数据结构应类似于以下代码：
 
     ```csharp
 
@@ -165,23 +165,23 @@ To create and update the data structure, complete the following steps:
 
     ```
 
-1. To accept the suggestion, press the tab key or select **Accept**.
+1. 若要接受建议，请按 Tab 键或选择“接受”****。
 
-1. Select the `SalesData` data structure, and then press **Ctrl+I** to open the inline chat interface.
+1. 选择 `SalesData` 数据结构，然后按 Ctrl+I**** 打开内联聊天界面。
 
-    You need to add fields for `baseCost` and `volumeDiscount` to the `SalesData` data structure (a `double` and an `int`). You also need to change the data type for `productID` from `int` to `string`.
+    需要将 `baseCost` 和 `volumeDiscount` 字段添加到 `SalesData` 数据结构（`double` 和 `int`）。 还需要将 `productID` 的数据类型从 `int` 更改为 `string`。
 
-1. Enter the following prompt:
+1. 输入以下提示：
 
     ```output
     add double field baseCost and int field volumeDiscount to SalesData. Change productID from int to string.
     ```
 
-    In practice, it may be easier to make these changes manually. However, using GitHub Copilot can help you learn how to structure your prompts for better results.
+    在实际操作中，手动进行这些更改可能更容易。 但是，使用 GitHub Copilot 可帮助你了解如何构建提示以获取更好的结果。
 
-1. Review the suggestions provided by GitHub Copilot and then select **Accept**.
+1. 查看 GitHub Copilot 提供的建议，然后选择“接受”。****
 
-    Your updated SalesData data structures should resemble the following code:
+    更新的 SalesData 数据结构应类似于以下代码：
 
     ```csharp
 
@@ -198,60 +198,60 @@ To create and update the data structure, complete the following steps:
 
     ```
 
-With the new and updated data structures in place, you can now work on updating the `GenerateSalesData` method.
+有了新的和更新的数据结构，现在可以更新 `GenerateSalesData` 方法。
 
-### Update the GenerateSalesData method using inline chat
+### 使用内联聊天更新 GenerateSalesData 方法
 
-Your project goals indicate that you need to update the `GenerateSalesData` method to produce a data sample that resembles "actual" data. You've already updated the `SalesData` data structure to include new fields for department code and manufacturing site code. You also changed the data type for `productID` from `int` to `string`. Now you need to update the `GenerateSalesData` method to generate data for the updated fields.
+项目目标指示需要更新 `GenerateSalesData` 方法以生成类似于“实际”数据的数据示例。 你已更新 `SalesData` 数据结构，以包含部门代码和制造站点代码的新字段。 你还将 `productID` 的数据类型从 `int` 更改为 `string`。 现在，需要更新 `GenerateSalesData` 方法，以便为更新的字段生成数据。
 
-You need to implement the following updates:
+需要实现以下更新：
 
-- departmentName: Update the assigned value. Assign a randomly selected department name from the `ProdDepartments` data structure.
-- productID: Update the assigned value. Format the productID using the pattern "`DDDD-###-SS-CC-MMM`" where the components of the ID are defined as follows:
+- departmentName：更新分配的值。 从 `ProdDepartments` 数据结构中分配随机选择的部门名称。
+- productID：更新分配的值。 使用模式“`DDDD-###-SS-CC-MMM`”设置 productID 的格式，其中 ID 的组件定义如下：
 
-    - a 4-character code representing the department. Use the abbreviation from the `ProdDepartments` data structure corresponding to the assigned department name.
-    - a 3-digit number representing the product. The first digit should be the index number of the randomly selected department. The next two digits should be a random number from 1 to 99, but include leading 0s. For example, 1 should be formatted as 01.
-    - a 2-character code representing the product size. Randomly select a product size from a list of 5 sizes: XS, S, M, L, XL.
-    - a 2-character code representing the product color. Randomly select a product color from a list of 8 2-character color abbreviations: BK, BL, GR, RD, YL, OR, WT, GY.
-    - a 3-character code representing the manufacturing site. Randomly select a manufacturing site from the `ManufacturingSites` data structure.
+    - 一个表示部门的 4 个字符的代码。 使用与分配的部门名称对应的 `ProdDepartments` 数据结构中的缩写。
+    - 一个表示产品的 3 位数。 第一个数字应该是随机选择的部门的索引号。 接下来的两位数字应该是从 1 到 99 的随机数，但包括前导 0。 例如，1 应格式化为 01。
+    - 一个表示产品大小的 2 个字符的代码。 从 5 种大小的列表中选择产品大小：XS、S、M、L、XL。
+    - 一个表示产品颜色的 2 个字符的代码。 从 8 个 2 位字符的颜色缩写列表中选择产品颜色：BK、BL、GR、RD、YL、OR、WT、GY。
+    - 一个表示制造站点的 3 个字符的代码。 从 `ManufacturingSites` 数据结构中随机选择一个制造站点。
 
-- unitPrice: Raise the lower bound of the price range to 25 and the upper bound to 300. Assume that size and color don't affect the unit price.
-- baseCost: Assign a value to baseCost that represents manufacturing costs. Values can be generated using randomly generated discount off the unitPrice (5 to 20 percent). Not realistic, but acceptable for this demonstration.
-- volumeDiscount: Assign a value to volumeDiscount that represents a percentage discount awarded to the retail buyer. The value assigned to volumeDiscount should be the integer component of 10 percent of the quantitySold (10% of 19 units = 1% volumeDiscount).
+- unitPrice：将价格范围的下限提高到 25，上限提高到 300。 假设大小和颜色不会影响单位价格。
+- baseCost：为代表制造成本的 baseCost 赋值。 可以使用从 unitPrice的随机生成的折扣（5% 到 20%）生成值。 虽然不够真实，但对于本次演示来说是可以接受的。
+- volumeDiscount：向 volumeDiscount 分配一个值，该值代表向零售买家授予的百分比折扣。 分配给 volumeDiscount 的值应为 quantitySold 的 10% 的整数部分（10% 的 19 个单位 = 1% volumeDiscount）。
 
-To update the `GenerateSalesData` method, complete the following steps:
+若要更新 `GenerateSalesData` 方法，请完成以下步骤：
 
-1. Locate the `GenerateSalesData` method in the Program.cs file.
+1. 在 Program.cs 文件中找到 `GenerateSalesData` 方法。
 
-1. Select the code line used to assign the `departmentName` value.
+1. 选择用于分配 `departmentName` 值的代码行。
 
-1. To open the inline chat interface, press **Ctrl+I** on the keyboard.
+1. 若要打开内联聊天界面，请按键盘上的 Ctrl+I****。
 
-1. Enter the following prompt:
+1. 输入以下提示：
 
     ```output
     Update the departmentName assignment to randomly select a department name. Use the ProdDepartments data structure. 
     ```
 
-1. Review the suggestions provided by GitHub Copilot, and then select **Accept**.
+1. 查看 GitHub Copilot 提供的建议，然后选择“接受”****。
 
-1. Create three blank code lines after the `departmentName` assignment.
+1. 在 `departmentName` 赋值后创建三个空白代码行。
 
-1. Take a minute to consider how you want to construct the value assigned to `productID`.
+1. 花点时间考虑如何构造分配给 `productID` 的值。
 
-    The productID values should be formatted as "`DDDD-###-SS-CC-MMM`" where the components of the ID are defined as follows:
+    productID 值的格式应为“`DDDD-###-SS-CC-MMM`”，其中 ID 的组件定义如下：
 
-    - `DDDD` is a 4-character code representing the department. Use the abbreviation from the `ProdDepartments` data structure corresponding to the assigned department name.
-    - `###` is 3 numeric characters representing a product. The first digit is the index number of the department. Next is a random number 1-99 with a leading 0 (for example: "07").
-    - `SS` is a 2-character code representing the product size. Randomly select a product size from a list of 5 sizes: XS, S, M, L, XL.
-    - `CC` is a 2-character code representing the product color. Randomly select a product color from a list of 8 2-character color abbreviations: BK, BL, GR, RD, YL, OR, WT, GY.
-    - `MMM` is a 3-character code representing the manufacturing site. Randomly select a manufacturing site from the `ManufacturingSites` data structure.
+    - `DDDD` 是表示部门的 4 个字符的代码。 使用与分配的部门名称对应的 `ProdDepartments` 数据结构中的缩写。
+    - `###` 是表示产品的 3 个数字字符。 第一位数字是部门的索引号。 接下来是带前导 0 的随机数 1-99（例如：“07”）。
+    - `SS` 是表示产品大小的 2 个字符的代码。 从 5 种大小的列表中选择产品大小：XS、S、M、L、XL。
+    - `CC` 是表示产品颜色的 2 个字符的代码。 从 8 个 2 位字符的颜色缩写列表中选择产品颜色：BK、BL、GR、RD、YL、OR、WT、GY。
+    - `MMM` 是表示制造站点的 3 个字符的代码。 从 `ManufacturingSites` 数据结构中随机选择一个制造站点。
 
-    This formatting specification is too complex to describe as a single prompt. It should be broken down into smaller steps.
+    此格式设置规范太复杂，无法描述为单个提示。 它应分解为较小的步骤。
 
-    It's worth noting that the index number of the selected departmentName can be used to select the departmentAbbreviation and to calculate the first digit of the product number.
+    值得注意的是，所选 departmentName 的索引号可用于选择 departmentAbbreviation 并计算产品编号的第一位数字。
 
-1. Copy the following variable declarations and paste them at the location of the second blank code line that you created.
+1. 复制以下变量声明，并将其粘贴到所创建的第二个空白代码行的位置。
 
     ```csharp
 
@@ -265,90 +265,90 @@ To update the `GenerateSalesData` method, complete the following steps:
 
     ```
 
-    You should have a blank code line before and after the variable declarations.
+    变量声明之前和之后应该有一个空白代码行。
 
-    Variable declarations aren't required for inline chat to generate code update suggestions from a prompt, but they do help anchor GitHub Copilot to a specific line of code where the update belongs.
+    内联聊天无需变量声明即可从提示生成代码更新建议，但变量声明确实有助于将 GitHub Copilot 定位到更新所属的特定代码行。
 
-1. Select the `int indexOfDept = 0;` code line, open the inline chat, and then enter the following prompt:
+1. 选择 `int indexOfDept = 0;` 代码行，打开内联聊天，然后输入以下提示：
 
     ```output
     Assign the array index for departmentName to indexOfDept.
     ```
 
-1. Review the suggestions provided by GitHub Copilot.
+1. 查看 GitHub Copilot 提供的建议。
 
-    You should see a suggestion that assigns the array index number corresponding to the selected departmentName to indexOfDept.
+    应会看到一个建议，该建议将对应于所选 departmentName 的数组索引号分配给 indexOfDept。
 
-    If you don't get the expected suggestion, you can select **Discard** to reject the suggestion and try again. The following prompt provides additional context for the assignment:
+    如果未收到预期建议，可以选择“放弃”**** 拒绝建议，然后重试。 以下提示为分配提供其他上下文：
 
     ```output
     Create an int named indexOfDept. Assign the array index number corresponding to the selected departmentName to indexOfDept.
     ```
 
-    This prompt specifies creating an integer variable named `indexOfDept` as well as how to assign a value. You could run this prompt without creating/selecting the variable declaration, but GitHub Copilot can occasionally lose its anchor point when you open the inline chat without any code selected.
+    此提示指定创建名为 `indexOfDept` 的整数变量以及如何赋值。 可以在不创建/选择变量声明的情况下运行此提示，但在未选择任何代码的情况下打开内联聊天时，GitHub Copilot 有时会丢失其定位点。
 
     > [!NOTE]
-    > The **Toggle Changes** button (accessible from the **More Actions** dropdown menu to the right of the **Accept** and **Discard** buttons) can be used to show/hide the code deleted by the suggested update. This can be useful when you want to see the original code and the suggested code update.
+    > 可通过“**切换更改**”按钮（位于“**接受**”和“**放弃**”按钮右侧的“**更多操作**”下拉菜单中）来显示或隐藏建议更新中删除的代码。 想要查看原始代码和建议的代码更新时，这会很有用。
 
-1. To accept the suggestion provided by GitHub Copilot, select **Accept**.
+1. 若要接受 GitHub Copilot 提供的建议，请选择“接受”****。
 
-1. Select the `string deptAbb = "";` code line, open the inline chat, and then enter the following prompt:
+1. 选择 `string deptAbb = "";` 代码行，打开内联聊天，然后输入以下提示：
 
     ```output
     Use indexOfDept to assign a department abbreviation to deptAbb.
     ```
 
-1. Review the suggestions provided by GitHub Copilot.
+1. 查看 GitHub Copilot 提供的建议。
 
-    You should see a suggestion that assigns the array index number corresponding to the selected departmentName to indexOfDept.
+    应会看到一个建议，该建议将对应于所选 departmentName 的数组索引号分配给 indexOfDept。
 
-1. To accept the suggestion provided by GitHub Copilot, select **Accept**.
+1. 若要接受 GitHub Copilot 提供的建议，请选择“接受”****。
 
-1. Select the `string firstDigit = "";` code line, open the inline chat, and then enter the following prompt:
+1. 选择 `string firstDigit = "";` 代码行，打开内联聊天，然后输入以下提示：
 
     ```output
     Assign indexOfDept + 1 to firstDigit.
     ```
 
-1. Review the suggestions provided by GitHub Copilot, and then select **Accept**.
+1. 查看 GitHub Copilot 提供的建议，然后选择“接受”****。
 
-1. Select the `string string nextTwoDigits = ""; = "";` code line, open the inline chat, and then enter the following prompt:
+1. 选择 `string string nextTwoDigits = ""; = "";` 代码行，打开内联聊天，然后输入以下提示：
 
     ```output
     Assign a random number 1-99 to nextTwoDigits. Include a leading 0 for numbers less than 10.
     ```
 
-1. Review the suggestions provided by GitHub Copilot, and then select **Accept**.
+1. 查看 GitHub Copilot 提供的建议，然后选择“接受”****。
 
-1. Select the `string sizeCode = "";` code line, open the inline chat, and then enter the following prompt:
+1. 选择 `string sizeCode = "";` 代码行，打开内联聊天，然后输入以下提示：
 
     ```output
     From the list {XS, S, M, L, XL}, randomly select a product size and assign it to sizeCode.
     ```
 
-1. Review the suggestions provided by GitHub Copilot, and then select **Accept**.
+1. 查看 GitHub Copilot 提供的建议，然后选择“接受”****。
 
-    In this case, you should see a suggestion that assigns a randomly selected product size to the `sizeCode` variable. GitHub Copilot could suggest using one or several code lines to satisfy this prompt. Either way, it will probably suggest creating a string array of product sizes and then use `random` to assign one of the sizes to `sizeCode`.
+    在这种情况下，应会看到一个建议，该建议将随机选择的产品大小分配给 `sizeCode` 变量。 GitHub Copilot 可能会建议使用一行或多行代码行来满足此提示的要求。 无论哪种方式，它都可能会建议创建一个产品大小的字符串数组，然后使用 `random` 将其中一个大小分配给 `sizeCode`。
 
-1. Select the `string colorCode = "";` code line, open the inline chat, and then enter the following prompt:
+1. 选择 `string colorCode = "";` 代码行，打开内联聊天，然后输入以下提示：
 
     ```output
     From the list {BK, BL, GR, RD, YL, OR, WT, GY}, randomly select a product color and assign it to colorCode.
     ```
 
-1. Review the suggestions provided by GitHub Copilot, and then select **Accept**.
+1. 查看 GitHub Copilot 提供的建议，然后选择“接受”****。
 
-1. Select the `string manufacturingSite = "";` code line, open the inline chat, and then enter the following prompt:
+1. 选择 `string manufacturingSite = "";` 代码行，打开内联聊天，然后输入以下提示：
 
     ```output
     Assign a randomly selected manufacturing site to manufacturingSite.
     ```
 
-1. Review the suggestions provided by GitHub Copilot, and then select **Accept**.
+1. 查看 GitHub Copilot 提供的建议，然后选择“接受”****。
 
-1. Take a minute to review your code.
+1. 花点时间查看你的代码。
 
-    You should have a series of code lines that assign values to the variables used to construct the productID. The next step is to construct the productID value.
+    应该有一系列代码行，这些代码行将值分配给用于构造 productID 的变量。 下一步是构造 productID 值。
 
     ```csharp
 
@@ -362,53 +362,53 @@ To update the `GenerateSalesData` method, complete the following steps:
 
     ```
 
-1. Select the `salesData[i].productID = random.Next(1, 101);` code line, open the inline chat, and then enter the following prompt:
+1. 选择 `salesData[i].productID = random.Next(1, 101);` 代码行，打开内联聊天，然后输入以下提示：
 
     ```output
     Add a "-" to deptAbb, nextTwoDigits, sizeCode, and colorCode. Combine deptAbb, firstDigit, nextTwoDigits, sizeCode, colorCode, and manufacturingSite to create the productID.
     ```
 
-1. Review the suggestions provided by GitHub Copilot, and then select **Accept**.
+1. 查看 GitHub Copilot 提供的建议，然后选择“接受”****。
 
-    You should see a suggestion that constructs the productID value using the variables you assigned earlier. The suggestion should include the necessary code to format the productID as "`DDDD-###-SS-CC-MMM`".
+    应会看到使用前面分配的变量构造 productID 值的建议。 建议应包含将 productID 格式化为“`DDDD-###-SS-CC-MMM`”的必要代码。
 
-1. Manually update the `unitPrice` assignment to use a range of 25 to 300 as follows:
+1. 手动更新 `unitPrice` 分配，以使用范围 25 到 300，如下所示：
 
     ```csharp
     salesData[i].unitPrice = random.Next(25, 300) + random.NextDouble();
     ```
 
-1. Create a blank line after the `unitPrice` assignment.
+1. 在 `unitPrice` 分配后创建一个空白行。
 
-1. Accept the code line completion that appears:
+1. 接受出现的代码行完成：
 
-    GitHub Copilot should provide a suggestion that assigns a value to `baseCost` that appears similar to the following code line:
+    GitHub Copilot 应提供一个建议，该建议将值分配给与以下代码行类似的 `baseCost`：
 
     ```csharp
     salesData[i].baseCost = random.Next(10, 100) + random.NextDouble();
     ```
 
-1. Select the code line used to assign a value to `salesData[i].baseCost`, open the inline chat, and then enter the following prompt:
+1. 选择用于为 `salesData[i].baseCost` 赋值的代码行，打开内联聊天，然后输入以下提示：
 
     ```output
     Discount the unitPrice by a random percentage between 5 and 20. Assign the result to baseCost.
     ```
 
-1. Review the suggestions provided by GitHub Copilot, and then select **Accept**.
+1. 查看 GitHub Copilot 提供的建议，然后选择“接受”****。
 
-1. Create a blank line after the `baseCost` assignment and accept the code line completion that appears.
+1. 在 `baseCost` 分配后创建一个空白行，并接受出现的代码行完成。
 
-    GitHub Copilot should provide a suggestion that assigns a value to `volumeDiscount`.
+    GitHub Copilot 应提供为 `volumeDiscount` 赋值的建议。
 
-1. Select the code line used to assign a value to `salesData[i].volumeDiscount`, open the inline chat, and then enter the following prompt:
+1. 选择用于为 `salesData[i].volumeDiscount` 赋值的代码行，打开内联聊天，然后输入以下提示：
 
     ```output
     Assign 10 percent of quantitySold to volumeDiscount. Truncate any fractional values.
     ```
 
-1. Review the suggestions provided by GitHub Copilot, and then select **Accept**.
+1. 查看 GitHub Copilot 提供的建议，然后选择“接受”****。
 
-1. Your updated GenerateSalesData method should now resemble the following snippet:
+1. 更新的 GenerateSalesData 方法现在应类似于以下代码片段：
 
     ```csharp
 
@@ -438,19 +438,19 @@ To update the `GenerateSalesData` method, complete the following steps:
 
     ```
 
-1. Save your changes.
+1. 保存所做更改。
 
-### Update the QuarterlySalesReport method using inline chat
+### 使用内联聊天更新 QuarterlySalesReport 方法
 
-You need to update the `QuarterlySalesReport` method. Based on the project goals, you need to implement the following updates:
+需要更新 `QuarterlySalesReport` 方法。 根据项目目标，需要实现以下更新：
 
-- When displaying the sales results, list the results in a logical order. For example, when listing total sale by quarter, the quarters should be listed in order from Q1 to Q4.
-- Display currency values using regional settings.
-- Add calculations for quarterly profit and profit percentage
-- Add calculations specific to individual departments: quarterly sales, profit, and profit percentage.
-- Add calculations for specific manufacturing locations: quarterly sales, profit, and profit percentage.
+- 显示销售结果时，按逻辑顺序列出结果。 例如，按季度列出总销售额时，应按第 1 季度到第 4 季度的顺序列出季度。
+- 使用区域设置显示货币值。
+- 添加季度利润和利润百分比的计算
+- 添加特定于各个部门的计算：季度销售额、利润和利润百分比。
+- 添加特定制造位置的计算：季度销售额、利润和利润百分比。
 
-At this point, your `QuarterlySalesReport` method should resemble the following code snippet:
+此时，方法 `QuarterlySalesReport` 应类似于以下代码片段：
 
 ```csharp
 
@@ -484,13 +484,13 @@ public void QuarterlySalesReport(SalesData[] salesData)
 
 ```
 
-To update the `QuarterlySalesReport` method, complete the following steps:
+若要更新 `QuarterlySalesReport` 方法，请完成以下步骤：
 
-1. To verify the current quarterly sales report output, run the application.
+1. 若要验证当前季度销售报告输出，请运行应用程序。
 
-    You should see a list of quarterly sales results displayed in the console window. Random values are used, so numeric data varies with every run.
+    应会看到控制台窗口中显示的季度销售结果列表。 使用随机值，因此数值数据因每次运行而异。
 
-    The quarterly sales report output should resemble the following:
+    季度销售报告输出应如下所示：
 
     ```output
     Quarterly Sales Report
@@ -501,31 +501,31 @@ To update the `QuarterlySalesReport` method, complete the following steps:
     Q1: $2174302.3663762277
     ```
 
-    Notice that the quarters aren't listed in order and the currency values aren't formatted properly.
+    请注意，季度未按顺序列出，货币值的格式不正确。
 
-    Your first task is to fix these issues.
+    你的第一个任务是解决这些问题。
 
-1. Locate the `QuarterlySalesReport` method in the Program.cs file.
+1. 在 Program.cs 文件中找到 `QuarterlySalesReport` 方法。
 
-1. Select the entire method.
+1. 选择整个方法。
 
-1. Open the inline chat interface, and then enter the following prompt:
+1. 打开内联聊天界面，然后输入以下提示：
 
     ```output
     Update the QuarterlySalesReport method to display quarterly results in order. Format currency using regional settings. 
     ```
 
-1. Take a minute to review the suggestions provided by GitHub Copilot.
+1. 花点时间查看 GitHub Copilot 提供的建议。
 
-    You should see a suggestion that includes the necessary code to calculate quarterly profit and profit percentage. The suggestion should include the necessary code to calculate the profit and profit percentage for each quarter.
+    应会看到一个建议，其中包含计算季度利润和利润百分比所需的代码。 建议应包括必要的代码来计算每个季度的利润和利润百分比。
 
-1. To accept the suggestion provided by GitHub Copilot, select **Accept**.
+1. 若要接受 GitHub Copilot 提供的建议，请选择“接受”****。
 
-1. Save your changes.
+1. 保存所做更改。
 
-1. Run the application and verify that the quarterly sales results are now displayed in order and that the currency values are formatted properly.
+1. 运行应用程序并验证季度销售结果现在是否按顺序显示，并正确设置货币值的格式。
 
-    Although the numeric values are different, the quarterly sales report output should now be formatted similar to the following output:
+    虽然数值不同，但季度销售报告输出的格式应与以下输出类似：
 
     ```output
     Quarterly Sales Report
@@ -537,31 +537,31 @@ To update the `QuarterlySalesReport` method, complete the following steps:
 
     ```
 
-    Your next step is to add calculations for quarterly profit and profit percentage.
+    下一步是添加季度利润和利润百分比的计算。
 
-1. Locate the `QuarterlySalesReport` method in the Program.cs file.
+1. 在 Program.cs 文件中找到 `QuarterlySalesReport` 方法。
 
-1. Select the entire method.
+1. 选择整个方法。
 
-1. Open the inline chat interface, and then enter the following prompt:
+1. 打开内联聊天界面，然后输入以下提示：
 
     ```output
     Update the QuarterlySalesReport method to include calculations for quarterly profit and profit percentage. Include the new calculations in the report output.
     ```
 
-1. Take a minute to review the suggestions provided by GitHub Copilot.
+1. 花点时间查看 GitHub Copilot 提供的建议。
 
-    You should see a suggestion that includes the necessary code to calculate quarterly profit and profit percentage. The suggestion should include the necessary code to calculate the profit and profit percentage for each quarter.
+    应会看到一个建议，其中包含计算季度利润和利润百分比所需的代码。 建议应包括必要的代码来计算每个季度的利润和利润百分比。
 
-1. To accept the suggestion provided by GitHub Copilot, select **Accept**.
+1. 若要接受 GitHub Copilot 提供的建议，请选择“接受”****。
 
-1. Continue to select **Accept** for the remaining suggestions.
+1. 针对剩余的建议继续选择“接受”****。
 
-1. Save your changes.
+1. 保存所做更改。
 
-1. Run the application and verify that the quarterly sales results now include calculations for profit and profit percentage.
+1. 运行应用程序并验证季度销售结果现在是否包括利润和利润百分比的计算。
 
-    Although the numeric values are different, the quarterly sales report output should now be formatted similar to the following output:
+    虽然数值不同，但季度销售报告输出的格式应与以下输出类似：
 
     ```output
     Quarterly Sales Report
@@ -573,29 +573,29 @@ To update the `QuarterlySalesReport` method, complete the following steps:
 
     ```
 
-    Your next step is to add calculations for quarterly sales, profit, and profit percentage by department.
+    下一步是按部门添加季度销售额、利润和利润百分比的计算。
 
-1. Select the entire method.
+1. 选择整个方法。
 
-1. To open the inline chat interface, and then enter the following prompt:
+1. 打开内联聊天界面，然后输入以下提示：
 
     ```output
     Update the QuarterlySalesReport method to include calculations for quarterly sales, profit, and profit percentage by department. Include the new calculations in the report output. 
     ```
 
-1. Take a minute to review the suggestions provided by GitHub Copilot.
+1. 花点时间查看 GitHub Copilot 提供的建议。
 
-    You should see a suggestion that includes the necessary code to calculate quarterly profit and profit percentage. The suggestion should include the necessary code to calculate the profit and profit percentage for each quarter.
+    应会看到一个建议，其中包含计算季度利润和利润百分比所需的代码。 建议应包括必要的代码来计算每个季度的利润和利润百分比。
 
-1. To accept the suggestion provided by GitHub Copilot, select **Accept**.
+1. 若要接受 GitHub Copilot 提供的建议，请选择“接受”****。
 
-1. Continue to select **Accept** for the remaining suggestions.
+1. 针对剩余的建议继续选择“接受”****。
 
-1. Save your changes.
+1. 保存所做更改。
 
-1. Run the application and verify that the quarterly sales results now include calculations for profit and profit percentage.
+1. 运行应用程序并验证季度销售结果现在是否包括利润和利润百分比的计算。
 
-    Although the numeric values are different, the quarterly sales report output should now be formatted similar to the following output:
+    虽然数值不同，但季度销售报告输出的格式应与以下输出类似：
 
     ```output
     Quarterly Sales Report
@@ -646,6 +646,6 @@ To update the `QuarterlySalesReport` method, complete the following steps:
 
     ```
 
-### Summary
+### 总结
 
-In this demo, you used the inline chat feature to update the `GenerateSalesData` and `QuarterlySalesReport` methods. You added new fields to the `SalesData` data structure and then updated the `GenerateSalesData` method to generate data for the new fields. You also updated the `QuarterlySalesReport` method to include calculations for quarterly profit and profit percentage. You also added calculations for quarterly sales, profit, and profit percentage by department.
+在本演示中，你使用内联聊天功能更新了 `GenerateSalesData` 和 `QuarterlySalesReport` 方法。 已将新字段添加到 `SalesData` 数据结构，然后更新 `GenerateSalesData` 方法以生成新字段的数据。 你还更新了 `QuarterlySalesReport` 方法，以包括季度利润和利润百分比的计算。 此外，还按部门添加了季度销售额、利润和利润百分比的计算。
